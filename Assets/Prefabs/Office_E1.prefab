@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23890046597267964}
   - component: {fileID: 64531642119908672}
   m_Layer: 0
-  m_Name: Office
+  m_Name: Office_E1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

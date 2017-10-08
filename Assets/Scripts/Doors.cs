@@ -7,9 +7,15 @@ public class Doors : MonoBehaviour {
 	public float angle_max_right = -120.0f;
 	public float angle_max_left	 = 120.0f;
 
+	public bool openRight = true;
+	public bool openLeft = true;
+	public bool isLocked = false;
+
 	public float angular_speed = 90.0f;
+	public float openingTimeRatio = 0.5f;
 
 	private bool actionEnded = true;
+	private bool needAction = false;
 	private bool needOpen = false;
 	private bool needClose = false;
 	private float angle = 0.0f;
@@ -30,6 +36,11 @@ public class Doors : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if( !openRight && !openLeft ){
+			isLocked = true;
+		}
+
 		if (needClose) {
 			if (left_true_right_false) { // door on left size (positive angle)
 				angle -= angular_speed * Time.deltaTime;
@@ -71,13 +82,13 @@ public class Doors : MonoBehaviour {
 		else
 			timePoignee = durationPoignee;
 		
-		if (timePoignee >= durationPoignee * 0.5f && timePoignee < durationPoignee) {
+		if (timePoignee >= durationPoignee * openingTimeRatio && timePoignee < durationPoignee && needAction) {
 			DoorAction (character);
 		}
 
 		if (timePoignee < durationPoignee) {
 
-			float u = 2.0f*Mathf.PI * timePoignee / durationPoignee;
+			float u = ((isLocked)?2.0f:1.0f)*2.0f*Mathf.PI * timePoignee / durationPoignee;
 
 			float a = 45.0f * (Mathf.Cos( u ) - 1.0f ) / 2.0f;
 
@@ -91,31 +102,45 @@ public class Doors : MonoBehaviour {
 		if (timePoignee >= durationPoignee) {
 			timePoignee = 0.0f;
 			character = go;
+			needAction = true;
 		}
 	}
 
 	public void DoorAction(GameObject go){
 		if (actionEnded) {
 			actionEnded = false;
+			needAction = false;
 
 			if (angle != 0.0f) {
 				needClose = true;
 				needOpen = false;
-			} else {
-				needOpen = true;
-				needClose = false;
+			} else if(!isLocked){
+				if (openLeft && openRight) {
 
-				Vector3 direction = transform.position - go.transform.position;
-				float dir_angle_horizontal = Mathf.Atan2 (direction.z, direction.x) * 180.0f / Mathf.PI;
+					needOpen = true;
+					needClose = false;
 
-				dir_angle_horizontal += transform.eulerAngles.y;
+					Vector3 direction = transform.position - go.transform.position;
+					float dir_angle_horizontal = Mathf.Atan2 (direction.z, direction.x) * 180.0f / Mathf.PI;
 
-				while (dir_angle_horizontal > 180)
-					dir_angle_horizontal -= 360;
-				while (dir_angle_horizontal < -180)
-					dir_angle_horizontal += 360;
+					dir_angle_horizontal += transform.eulerAngles.y;
 
-				left_true_right_false = dir_angle_horizontal > 0.0f;
+					while (dir_angle_horizontal > 180)
+						dir_angle_horizontal -= 360;
+					while (dir_angle_horizontal < -180)
+						dir_angle_horizontal += 360;
+
+					left_true_right_false = dir_angle_horizontal > 0.0f;
+
+				} else if (openLeft) {
+					needOpen = true;
+					needClose = false;
+					left_true_right_false = true;
+				} else if (openRight) {
+					needOpen = true;
+					needClose = false;
+					left_true_right_false = false;
+				}
 			}
 		}
 	}

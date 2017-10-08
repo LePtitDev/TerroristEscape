@@ -21,6 +21,7 @@ public class CharacterAction : MonoBehaviour {
 			RaycastHit hit;
 			Physics.Raycast (transform.position, fwd, out hit, length);
 
+			// Si on rencontre une porte
 			if (hit.collider != null && hit.collider.gameObject.CompareTag ("Tag_Door")) {
 				Doors d = hit.collider.gameObject.GetComponent<Doors> ();
 				if (d != null)
@@ -33,6 +34,24 @@ public class CharacterAction : MonoBehaviour {
 						}
 					}
 				}
+			}
+
+			// Si on rencontre une fenetre
+			if (hit.collider != null && hit.collider.gameObject.CompareTag ("Tag_Window")) {
+				GameObject go = hit.collider.gameObject;
+				Windows w = null;
+				w = go.GetComponent<Windows> ();
+
+				// si l'object touché n'est pas le parent
+				if (w == null) {
+					go = go.transform.parent.gameObject;
+					w = go.GetComponent<Windows> ();
+				}
+
+				if (w != null) {
+					w.Action ();
+				}
+
 			}
 
 		}
