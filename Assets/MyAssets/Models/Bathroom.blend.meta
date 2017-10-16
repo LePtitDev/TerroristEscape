@@ -1,0 +1,206 @@
+fileFormatVersion: 2
+guid: 8ecb640a1ff65da4fab5971c788f0a79
+timeCreated: 1507876418
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Circle
+    100004: Circle_012
+    100006: Cube
+    100008: Cube_001
+    100010: Cube_002
+    100012: Cube_003
+    100014: Fan
+    100016: Hafa_East_600_cabinet_002
+    100018: Mirror
+    100020: Toilet_Bottom
+    100022: wc_toiletpaper
+    100024: wheels02_002
+    100026: CoffeeMachine
+    100028: Desk
+    100030: Furniture
+    100032: Furniture_Sink
+    100034: HandDryer
+    100036: OfficeChair
+    100038: Toilet
+    100040: ToiletPaper_Floor
+    100042: ToiletPaper_Wall
+    100044: Furniture_Sink_Up
+    100046: Toilet_Up
+    100048: Radiator
+    400000: //RootNode
+    400002: Circle
+    400004: Circle_012
+    400006: Cube
+    400008: Cube_001
+    400010: Cube_002
+    400012: Cube_003
+    400014: Fan
+    400016: Hafa_East_600_cabinet_002
+    400018: Mirror
+    400020: Toilet_Bottom
+    400022: wc_toiletpaper
+    400024: wheels02_002
+    400026: CoffeeMachine
+    400028: Desk
+    400030: Furniture
+    400032: Furniture_Sink
+    400034: HandDryer
+    400036: OfficeChair
+    400038: Toilet
+    400040: ToiletPaper_Floor
+    400042: ToiletPaper_Wall
+    400044: Furniture_Sink_Up
+    400046: Toilet_Up
+    400048: Radiator
+    2300000: Circle
+    2300002: Circle_012
+    2300004: Cube
+    2300006: Cube_001
+    2300008: Cube_002
+    2300010: Cube_003
+    2300012: Fan
+    2300014: Hafa_East_600_cabinet_002
+    2300016: Mirror
+    2300018: Toilet_Bottom
+    2300020: wc_toiletpaper
+    2300022: wheels02_002
+    2300024: CoffeeMachine
+    2300026: Desk
+    2300028: Furniture
+    2300030: Furniture_Sink
+    2300032: HandDryer
+    2300034: OfficeChair
+    2300036: Toilet
+    2300038: ToiletPaper_Floor
+    2300040: ToiletPaper_Wall
+    2300042: Furniture_Sink_Up
+    2300044: Toilet_Up
+    2300046: Radiator
+    3300000: Circle
+    3300002: Circle_012
+    3300004: Cube
+    3300006: Cube_001
+    3300008: Cube_002
+    3300010: Cube_003
+    3300012: Fan
+    3300014: Hafa_East_600_cabinet_002
+    3300016: Mirror
+    3300018: Toilet_Bottom
+    3300020: wc_toiletpaper
+    3300022: wheels02_002
+    3300024: CoffeeMachine
+    3300026: Desk
+    3300028: Furniture
+    3300030: Furniture_Sink
+    3300032: HandDryer
+    3300034: OfficeChair
+    3300036: Toilet
+    3300038: ToiletPaper_Floor
+    3300040: ToiletPaper_Wall
+    3300042: Furniture_Sink_Up
+    3300044: Toilet_Up
+    3300046: Radiator
+    4300000: Cube_003
+    4300002: wheels02_002
+    4300004: Cube_002
+    4300006: Cube_001
+    4300008: Cube
+    4300010: Fan
+    4300012: Circle_012
+    4300014: Mirror
+    4300016: Toilet_Bottom
+    4300018: Hafa_East_600_cabinet_002
+    4300020: wc_toiletpaper
+    4300022: Circle
+    4300024: CoffeeMachine
+    4300026: OfficeChair
+    4300028: Furniture
+    4300030: HandDryer
+    4300032: Furniture_Sink
+    4300034: ToiletPaper_Floor
+    4300036: Toilet
+    4300038: ToiletPaper_Wall
+    4300040: Desk
+    4300042: Toilet_Up
+    4300044: Furniture_Sink_Up
+    4300046: Radiator
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

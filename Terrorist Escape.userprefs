@@ -1,11 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Windows.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MyAssets\Scripts\Lights.cs">
     <Files>
-      <File FileName="Assets\Scripts\Doors.cs" Line="12" Column="39" />
-      <File FileName="Assets\Scripts\CharacterAction.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" Line="13" Column="45" />
-      <File FileName="Assets\Scripts\Windows.cs" Line="9" Column="32" />
+      <File FileName="Assets\MyAssets\Scripts\Activable.cs" Line="112" Column="3" />
+      <File FileName="Assets\MyAssets\Scripts\Lights.cs" Line="24" Column="69" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
