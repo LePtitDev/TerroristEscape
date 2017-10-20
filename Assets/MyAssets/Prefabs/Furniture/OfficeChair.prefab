@@ -87,7 +87,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 7d211f9e808a75341bb5f76eb182973f, type: 2}
-  - {fileID: 2100000, guid: d246b859593b05548939f73d763907a6, type: 2}
+  - {fileID: 2100000, guid: cf318930672858248bba915c053cd1b1, type: 2}
   - {fileID: 2100000, guid: 5d2ac9192bc5cd5458345c4fc09b1bef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -153,7 +153,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 10, y: 10, z: 10}
+  m_BoxSize: {x: 1, y: 1, z: 1}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000

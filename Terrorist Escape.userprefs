@@ -1,9 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MyAssets\Scripts\Lights.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MyAssets\Scripts\ReflexionDisable.cs">
     <Files>
-      <File FileName="Assets\MyAssets\Scripts\Activable.cs" Line="112" Column="3" />
-      <File FileName="Assets\MyAssets\Scripts\Lights.cs" Line="24" Column="69" />
+      <File FileName="Assets\MyAssets\Scripts\Activable.cs" Line="1" Column="1" />
+      <File FileName="Assets\MyAssets\Scripts\Lights.cs" Line="1" Column="1" />
+      <File FileName="Assets\MyAssets\Scripts\ChangeCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets\MyAssets\Scripts\CharacterAction.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" Line="1" Column="1" />
+      <File FileName="Assets\MyAssets\Scripts\RandomScreen.cs" Line="1" Column="1" />
+      <File FileName="Assets\MyAssets\Scripts\ReflexionDisable.cs" Line="41" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

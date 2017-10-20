@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4072413532171904}
   - component: {fileID: 33838837805841948}
   - component: {fileID: 23405120446192004}
-  - component: {fileID: 64667929787345372}
+  - component: {fileID: 64153641542580044}
   m_Layer: 0
   m_Name: Desk
   m_TagString: Untagged
@@ -80,8 +80,8 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322976988740684}
-  m_Mesh: {fileID: 4300040, guid: 8ecb640a1ff65da4fab5971c788f0a79, type: 3}
---- !u!64 &64667929787345372
+  m_Mesh: {fileID: 4300056, guid: 8ecb640a1ff65da4fab5971c788f0a79, type: 3}
+--- !u!64 &64153641542580044
 MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -94,4 +94,4 @@ MeshCollider:
   m_Convex: 0
   m_InflateMesh: 0
   m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300040, guid: 8ecb640a1ff65da4fab5971c788f0a79, type: 3}
+  m_Mesh: {fileID: 4300056, guid: 8ecb640a1ff65da4fab5971c788f0a79, type: 3}

@@ -14,6 +14,9 @@ public class CharacterAction : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (!gameObject.GetComponent<Camera> ().enabled)
+			return;
+
 		if (Input.GetKeyDown (KeyCode.E)) {
 
 			Vector3 fwd = transform.TransformDirection (Vector3.forward);
@@ -49,7 +52,7 @@ public class CharacterAction : MonoBehaviour {
 					}
 
 					if (a) {
-						a.Action ();
+						a.Action (gameObject);
 					}
 				}
 			}

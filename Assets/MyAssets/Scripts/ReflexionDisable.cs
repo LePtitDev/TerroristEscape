@@ -7,6 +7,8 @@ public class ReflexionDisable : MonoBehaviour {
 	public float FPS_Min = 60.0f;
 	public float time_Min = 3.0f;
 
+	public bool debug = false;
+
 	private float time = 0;
 	private float time_low = 0;
 
@@ -34,6 +36,9 @@ public class ReflexionDisable : MonoBehaviour {
 		} else {
 			time_low = 0.0f;
 		}
+
+		if (debug)
+			Debug.Log (fps);
 
 	}
 }

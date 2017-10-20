@@ -30,6 +30,14 @@ ModelImporter:
     100044: Furniture_Sink_Up
     100046: Toilet_Up
     100048: Radiator
+    100050: BigDesk
+    100052: Locker_Core
+    100054: Locker_Door_Left
+    100056: Locker_Door_Right
+    100058: SpotLight
+    100060: Screen
+    100062: Keyboard
+    100064: Mouse
     400000: //RootNode
     400002: Circle
     400004: Circle_012
@@ -55,6 +63,14 @@ ModelImporter:
     400044: Furniture_Sink_Up
     400046: Toilet_Up
     400048: Radiator
+    400050: BigDesk
+    400052: Locker_Core
+    400054: Locker_Door_Left
+    400056: Locker_Door_Right
+    400058: SpotLight
+    400060: Screen
+    400062: Keyboard
+    400064: Mouse
     2300000: Circle
     2300002: Circle_012
     2300004: Cube
@@ -79,6 +95,14 @@ ModelImporter:
     2300042: Furniture_Sink_Up
     2300044: Toilet_Up
     2300046: Radiator
+    2300048: BigDesk
+    2300050: Locker_Core
+    2300052: Locker_Door_Left
+    2300054: Locker_Door_Right
+    2300056: SpotLight
+    2300058: Screen
+    2300060: Keyboard
+    2300062: Mouse
     3300000: Circle
     3300002: Circle_012
     3300004: Cube
@@ -103,6 +127,14 @@ ModelImporter:
     3300042: Furniture_Sink_Up
     3300044: Toilet_Up
     3300046: Radiator
+    3300048: BigDesk
+    3300050: Locker_Core
+    3300052: Locker_Door_Left
+    3300054: Locker_Door_Right
+    3300056: SpotLight
+    3300058: Screen
+    3300060: Keyboard
+    3300062: Mouse
     4300000: Cube_003
     4300002: wheels02_002
     4300004: Cube_002
@@ -127,6 +159,14 @@ ModelImporter:
     4300042: Toilet_Up
     4300044: Furniture_Sink_Up
     4300046: Radiator
+    4300048: Locker_Door_Left
+    4300050: Locker_Door_Right
+    4300052: Locker_Core
+    4300054: SpotLight
+    4300056: BigDesk
+    4300058: Screen
+    4300060: Keyboard
+    4300062: Mouse
     7400000: Default Take
     9500000: //RootNode
   materials:

@@ -17,6 +17,8 @@ public class Activable : MonoBehaviour {
 	public ParticleSystem particuleSystem;
 	public bool activeWhenOpened;
 
+	public bool debug = false;
+
 	//Sons
 	/*
 	public ParticleSystem particuleSystem;
@@ -31,6 +33,8 @@ public class Activable : MonoBehaviour {
 	private float amplitudeMaxSigne = 1.0f;
 	private bool isOpen = false;
 	private bool isClose = false;
+
+	private GameObject lastActionner;
 
 	void Start () {
 		if (movableObject) {
@@ -68,14 +72,21 @@ public class Activable : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if(movableObject == null && autoClose && isOpen) {
+			isOpen = !isOpen;
+			isClose = !isClose;
+		}
+			
+
 		if (!isActionEnded) {
 			if (needOpen) {
 				if (amplitudeActual >= amplitudeMaxAbs) {
 					isActionEnded = true;
 					amplitudeActual = amplitudeMaxAbs;
 					isOpen = true;
+					isClose = false;
 					if (autoClose)
-						Action ();
+						Action (lastActionner);
 
 				} else {
 					amplitudeActual += Time.deltaTime * movementSpeed;
@@ -85,6 +96,7 @@ public class Activable : MonoBehaviour {
 					isActionEnded = true;
 					amplitudeActual = 0.0f;
 					isClose = true;
+					isOpen = false;
 				} else {
 					amplitudeActual -= Time.deltaTime * movementSpeed;
 				}
@@ -111,15 +123,18 @@ public class Activable : MonoBehaviour {
 		}
 	}
 
-	public void Action() {
+	public void Action(GameObject other) {
+		lastActionner = other;
+
+		if (debug)
+			Debug.Log ("Action " + gameObject.name);
+
 		if (isActionEnded) {
 
 			if (movableObject == null) {
 				isOpen = !isOpen;
 				isClose = !isClose;
 			} else {
-				isOpen = false;
-				isClose = false;
 				isActionEnded = false;
 				needOpen = (amplitudeActual == 0.0f);
 			}
@@ -132,5 +147,17 @@ public class Activable : MonoBehaviour {
 
 	public bool isClosed(){
 		return isClose;
+	}
+
+	public bool isOpening(){
+		return needOpen && isOpen == false && isClose == false;
+	}
+
+	public bool isClosing(){
+		return !needOpen && isOpen == false && isClose == false;
+	}
+
+	public GameObject getLastActionner(){
+		return lastActionner;
 	}
 }
