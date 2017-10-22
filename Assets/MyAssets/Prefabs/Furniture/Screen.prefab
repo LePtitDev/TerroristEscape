@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33531539182424348}
   - component: {fileID: 23913405324776486}
   - component: {fileID: 114368400751424058}
+  - component: {fileID: 65434502395182972}
+  - component: {fileID: 114217766493840390}
   m_Layer: 0
   m_Name: Screen
   m_TagString: Untagged
@@ -82,6 +84,42 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1442830295572788}
   m_Mesh: {fileID: 4300058, guid: 8ecb640a1ff65da4fab5971c788f0a79, type: 3}
+--- !u!65 &65434502395182972
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1442830295572788}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.576, y: 0.18, z: 0.435864}
+  m_Center: {x: 0, y: 0.010000002, z: 0.21693201}
+--- !u!114 &114217766493840390
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1442830295572788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1588a2c00c2a2d043b4c3dc1df2a0017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movableObject: {fileID: 0}
+  amplitudeMax: 0
+  direction: {x: 0, y: 0, z: 0}
+  movementSpeed: 1
+  movementIsRotation: 0
+  startClose: 1
+  autoClose: 0
+  particuleSystem: {fileID: 0}
+  activeWhenOpened: 0
+  dependences: []
+  enableWhenOpened: 0
+  blockRaycast: 1
+  debug: 0
 --- !u!114 &114368400751424058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,3 +139,4 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 939e2e44e8a26b9438d8a7d6befa55bf, type: 2}
   - {fileID: 2100000, guid: ddc891e0e25e91c43b502a4f33f3e412, type: 2}
   - {fileID: 2100000, guid: c1a6514767fda4a439250cadd80693b6, type: 2}
+  BlackScreen: {fileID: 0}

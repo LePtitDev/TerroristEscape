@@ -17,6 +17,7 @@ public class CharacterAction : MonoBehaviour {
 		if (!gameObject.GetComponent<Camera> ().enabled)
 			return;
 
+		bool stop = false;
 		if (Input.GetKeyDown (KeyCode.E)) {
 
 			Vector3 fwd = transform.TransformDirection (Vector3.forward);
@@ -53,8 +54,12 @@ public class CharacterAction : MonoBehaviour {
 
 					if (a) {
 						a.Action (gameObject);
+						stop = a.blockRaycast;
 					}
 				}
+
+				if (stop)
+					break;
 			}
 		}
 	}

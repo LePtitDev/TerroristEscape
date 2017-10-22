@@ -17,6 +17,11 @@ public class Activable : MonoBehaviour {
 	public ParticleSystem particuleSystem;
 	public bool activeWhenOpened;
 
+	// Others Objects
+	public GameObject[] dependences;
+	public bool enableWhenOpened;
+
+	public bool blockRaycast = false;
 	public bool debug = false;
 
 	//Sons
@@ -121,6 +126,16 @@ public class Activable : MonoBehaviour {
 			if (particuleSystem && !isClose && needOpen && !particuleSystem.isStopped)
 				particuleSystem.Stop ();
 		}
+
+		if (enableWhenOpened) {
+			for (int i = 0; i < dependences.Length; i++) {
+				dependences [i].SetActive ( isOpen );
+			}
+		} else {
+			for (int i = 0; i < dependences.Length; i++) {
+				dependences [i].SetActive ( isClose );
+			}
+		}
 	}
 
 	public void Action(GameObject other) {
@@ -135,6 +150,8 @@ public class Activable : MonoBehaviour {
 				isOpen = !isOpen;
 				isClose = !isClose;
 			} else {
+				isOpen = false;
+				isClose = false;
 				isActionEnded = false;
 				needOpen = (amplitudeActual == 0.0f);
 			}

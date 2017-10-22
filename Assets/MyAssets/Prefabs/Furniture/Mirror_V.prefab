@@ -125,6 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FPS_Min: 60
   time_Min: 4
+  debug: 0
 --- !u!215 &215689364836659626
 ReflectionProbe:
   m_ObjectHideFlags: 1
@@ -139,7 +140,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 256
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 1, y: 1, z: 1}
+  m_BoxSize: {x: 0.1, y: 0.1, z: 0.1}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 20

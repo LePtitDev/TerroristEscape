@@ -38,6 +38,16 @@ ModelImporter:
     100060: Screen
     100062: Keyboard
     100064: Mouse
+    100066: PencilBox
+    100068: Classeur
+    100070: PaperPile
+    100072: PostIt
+    100074: Painting_Large
+    100076: Painting_Medium
+    100078: Painting_Small
+    100080: Button
+    100082: Button_Up
+    100084: Sphere
     400000: //RootNode
     400002: Circle
     400004: Circle_012
@@ -71,6 +81,16 @@ ModelImporter:
     400060: Screen
     400062: Keyboard
     400064: Mouse
+    400066: PencilBox
+    400068: Classeur
+    400070: PaperPile
+    400072: PostIt
+    400074: Painting_Large
+    400076: Painting_Medium
+    400078: Painting_Small
+    400080: Button
+    400082: Button_Up
+    400084: Sphere
     2300000: Circle
     2300002: Circle_012
     2300004: Cube
@@ -103,6 +123,16 @@ ModelImporter:
     2300058: Screen
     2300060: Keyboard
     2300062: Mouse
+    2300064: PencilBox
+    2300066: Classeur
+    2300068: PaperPile
+    2300070: PostIt
+    2300072: Painting_Large
+    2300074: Painting_Medium
+    2300076: Painting_Small
+    2300078: Button
+    2300080: Button_Up
+    2300082: Sphere
     3300000: Circle
     3300002: Circle_012
     3300004: Cube
@@ -135,6 +165,16 @@ ModelImporter:
     3300058: Screen
     3300060: Keyboard
     3300062: Mouse
+    3300064: PencilBox
+    3300066: Classeur
+    3300068: PaperPile
+    3300070: PostIt
+    3300072: Painting_Large
+    3300074: Painting_Medium
+    3300076: Painting_Small
+    3300078: Button
+    3300080: Button_Up
+    3300082: Sphere
     4300000: Cube_003
     4300002: wheels02_002
     4300004: Cube_002
@@ -167,6 +207,16 @@ ModelImporter:
     4300058: Screen
     4300060: Keyboard
     4300062: Mouse
+    4300064: PencilBox
+    4300066: PaperPile
+    4300068: Classeur
+    4300070: PostIt
+    4300072: Painting_Small
+    4300074: Painting_Medium
+    4300076: Painting_Large
+    4300078: Button_Up
+    4300080: Sphere
+    4300082: Button
     7400000: Default Take
     9500000: //RootNode
   materials:

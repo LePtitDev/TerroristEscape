@@ -86,7 +86,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 93d379f7f053ec54688d1a2e89876b8e, type: 2}
+  - {fileID: 2100000, guid: 7d211f9e808a75341bb5f76eb182973f, type: 2}
   - {fileID: 2100000, guid: 7d211f9e808a75341bb5f76eb182973f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -123,8 +123,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
-  m_Range: 5
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -175,4 +175,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9255eb3655e75eb4798d08cde3b722e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 15
+  distance: 50
