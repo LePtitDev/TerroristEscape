@@ -1,13 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MyAssets\Scripts\Class\HiddingPlaceClass.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MyAssets\Scripts\PlayerPosition\PlayerPositionRoom.cs">
     <Files>
-      <File FileName="Assets\MyAssets\Scripts\Class\SceneClass.cs" Line="12" Column="17" />
-      <File FileName="Assets\MyAssets\Scripts\Class\StepClass.cs" Line="13" Column="24" />
-      <File FileName="Assets\MyAssets\Scripts\Class\RoomClass.cs" Line="22" Column="28" />
-      <File FileName="Assets\MyAssets\Scripts\Class\HiddingPlaceClass.cs" Line="50" Column="21" />
-      <File FileName="Assets\MyAssets\Scripts\Class\Global.cs" Line="15" Column="35" />
-      <File FileName="Assets\MyAssets\Scripts\Activable.cs" Line="154" Column="21" />
+      <File FileName="Assets\MyAssets\Scripts\PlayerPosition\PlayerPositionScene.cs" Line="75" Column="4" />
+      <File FileName="Assets\MyAssets\Scripts\PlayerPosition\PlayerPositionStep.cs" Line="92" Column="4" />
+      <File FileName="Assets\MyAssets\Scripts\PlayerPosition\PlayerPositionRoom.cs" Line="40" Column="101" />
+      <File FileName="Assets\MyAssets\Scripts\PlayerPosition\PlayerPositionHiddingPlace.cs" Line="41" Column="34" />
+      <File FileName="Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" Line="225" Column="93" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

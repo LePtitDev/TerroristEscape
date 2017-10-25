@@ -18,7 +18,7 @@ public class CharacterAction : MonoBehaviour {
 			return;
 
 		bool stop = false;
-		if (Input.GetKeyDown (KeyCode.E)) {
+		if (Input.GetKeyDown (KeyCode.E) || Input.GetKeyDown(KeyCode.Joystick1Button2)) {
 
 			Vector3 fwd = transform.TransformDirection (Vector3.forward);
 

@@ -6,6 +6,7 @@ public class Lights : MonoBehaviour {
 
 	private GameObject Controller;
 	public float distance = 10.0f;
+	public bool useGlobalDistance = true;
 
 	private bool isLightEnable = true;
 
@@ -15,10 +16,15 @@ public class Lights : MonoBehaviour {
 
 		if (Controller == null)
 			Debug.Log ("No Camera Found");
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		
+		if (useGlobalDistance)
+			distance = Global.distanceLight;
+		
 		Light l = GetComponent<Light> ();
 
 		if (Controller != null)

@@ -6,9 +6,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 {
     [Serializable]
     public class MouseLook
-    {
-        public float XSensitivity = 2f;
-        public float YSensitivity = 2f;
+	{
+		public float XSensitivity = 2f;
+		public float YSensitivity = 2f;
+		public float XSensitivityJoystic = 20f;
+		public float YSensitivityJoystic = 20f;
         public bool clampVerticalRotation = true;
         public float MinimumX = -90F;
         public float MaximumX = 90F;
@@ -29,9 +31,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 
         public void LookRotation(Transform character, Transform camera)
-        {
-            float yRot = CrossPlatformInputManager.GetAxis("Mouse X") * XSensitivity;
-            float xRot = CrossPlatformInputManager.GetAxis("Mouse Y") * YSensitivity;
+		{
+			float yRot = CrossPlatformInputManager.GetAxis("Mouse X") * XSensitivity;
+			float xRot = CrossPlatformInputManager.GetAxis("Mouse Y") * YSensitivity;
+
+			yRot += CrossPlatformInputManager.GetAxis("JoysticRight_Horizontal") * XSensitivityJoystic;
+			xRot -= CrossPlatformInputManager.GetAxis("JoysticRight_Vertical") * YSensitivityJoystic;
 
             m_CharacterTargetRot *= Quaternion.Euler (0f, yRot, 0f);
             m_CameraTargetRot *= Quaternion.Euler (-xRot, 0f, 0f);

@@ -213,7 +213,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
 --- !u!20 &20581348561620250
 Camera:
   m_ObjectHideFlags: 1
@@ -249,7 +248,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
 --- !u!23 &23137456895617692
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -259,6 +257,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -271,9 +270,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
+  m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -291,6 +291,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -307,6 +308,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -324,6 +326,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -340,6 +343,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -446,7 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a90690b187e74a469dbc186f943d161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 20358911145715046}
+  m_camera: {fileID: 20358911145715046}
 --- !u!114 &114156767493001714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -467,6 +471,9 @@ MonoBehaviour:
   autoClose: 1
   particuleSystem: {fileID: 0}
   activeWhenOpened: 0
+  dependences: []
+  enableWhenOpened: 0
+  blockRaycast: 0
   debug: 0
 --- !u!114 &114300568702945698
 MonoBehaviour:
@@ -503,7 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a90690b187e74a469dbc186f943d161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 20581348561620250}
+  m_camera: {fileID: 20581348561620250}
 --- !u!114 &114919124599521974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -524,6 +531,9 @@ MonoBehaviour:
   autoClose: 1
   particuleSystem: {fileID: 0}
   activeWhenOpened: 0
+  dependences: []
+  enableWhenOpened: 0
+  blockRaycast: 0
   debug: 0
 --- !u!124 &124221586895833316
 Behaviour:
