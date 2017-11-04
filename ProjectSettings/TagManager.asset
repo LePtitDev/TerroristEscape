@@ -7,6 +7,7 @@ TagManager:
   - Tag_Door
   - Tag_Window
   - Tag_Sink
+  - Tag_NPC
   layers:
   - Default
   - TransparentFX
