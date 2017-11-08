@@ -48,6 +48,8 @@ ModelImporter:
     100080: Button
     100082: Button_Up
     100084: Sphere
+    100086: Desk_001
+    100088: RestaurantDesk
     400000: //RootNode
     400002: Circle
     400004: Circle_012
@@ -91,6 +93,8 @@ ModelImporter:
     400080: Button
     400082: Button_Up
     400084: Sphere
+    400086: Desk_001
+    400088: RestaurantDesk
     2300000: Circle
     2300002: Circle_012
     2300004: Cube
@@ -133,6 +137,8 @@ ModelImporter:
     2300078: Button
     2300080: Button_Up
     2300082: Sphere
+    2300084: Desk_001
+    2300086: RestaurantDesk
     3300000: Circle
     3300002: Circle_012
     3300004: Cube
@@ -175,6 +181,8 @@ ModelImporter:
     3300078: Button
     3300080: Button_Up
     3300082: Sphere
+    3300084: Desk_001
+    3300086: RestaurantDesk
     4300000: Cube_003
     4300002: wheels02_002
     4300004: Cube_002
@@ -217,9 +225,106 @@ ModelImporter:
     4300078: Button_Up
     4300080: Sphere
     4300082: Button
+    4300084: Desk_001
+    4300086: RestaurantDesk
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_CoffeeMachine
+    second: {fileID: 2100000, guid: 15e2f83234a4f9744a5bf84ba990c1bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_DarkFabric
+    second: {fileID: 2100000, guid: 5d2ac9192bc5cd5458345c4fc09b1bef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Desk
+    second: {fileID: 2100000, guid: b82fb8f4e84e45141a4452bcb2859531, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_KeyBoard
+    second: {fileID: 2100000, guid: 6e01d29628e755645b5ca8b81e644992, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_KeyBoard__keyboard-vector-diffuse-1-HD_jpg
+    second: {fileID: 2100000, guid: 26442bace43dae04a9b45a1d6b6ad00b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Marble
+    second: {fileID: 2100000, guid: e5b1fd9a9861e7144890dbdeacaec97d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Metal
+    second: {fileID: 2100000, guid: 7d211f9e808a75341bb5f76eb182973f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_PaperPile__000_png
+    second: {fileID: 2100000, guid: 5b4efcce7aca4d940aa51ab7de6dc03e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_PencilBox
+    second: {fileID: 2100000, guid: 10f4d7fbab615f04bbb28c599b5d9655, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Plastic
+    second: {fileID: 2100000, guid: d56fd11edfb30ba47816cd9c6251ae82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Plastic_Black
+    second: {fileID: 2100000, guid: 21a176cf3f98a294797e587b6b8446c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Screen
+    second: {fileID: 2100000, guid: 9293710389777404cb3921f8d3426019, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_ToiletPaper
+    second: {fileID: 2100000, guid: 6c0d0a37cc9cc514c80525cb2ccce97e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_WhitePaint
+    second: {fileID: 2100000, guid: 93d379f7f053ec54688d1a2e89876b8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Wood
+    second: {fileID: 2100000, guid: d5f1eb473c3560346a910246530aaafc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Wood__Texture_Desk_png_001
+    second: {fileID: 2100000, guid: 609e6c9979612014ea0050a289e68813, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 749b365232f3b9147809ffb072fe6094, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001__Texture_Desk_png_001
+    second: {fileID: 2100000, guid: 609e6c9979612014ea0050a289e68813, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: unnamed
+    second: {fileID: 2100000, guid: cfd15a98f727cb7428689a69a127d9d0, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
