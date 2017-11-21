@@ -1131,6 +1131,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 939e2e44e8a26b9438d8a7d6befa55bf, type: 2}
   - {fileID: 2100000, guid: ddc891e0e25e91c43b502a4f33f3e412, type: 2}
   - {fileID: 2100000, guid: c1a6514767fda4a439250cadd80693b6, type: 2}
+  - {fileID: 2100000, guid: 99baab9b4a39cb94d8b9782c99fcda62, type: 2}
+  - {fileID: 2100000, guid: f995b3796f4b0cd4db440a31b9151f71, type: 2}
   BlackScreen: {fileID: 2100000, guid: cf318930672858248bba915c053cd1b1, type: 2}
 --- !u!114 &114406060909856110
 MonoBehaviour:

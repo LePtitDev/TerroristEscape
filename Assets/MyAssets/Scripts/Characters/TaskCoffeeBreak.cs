@@ -68,21 +68,21 @@ public class TaskCoffeeBreak : MonoBehaviour
 	void Update () {
         if (!flagInRoom && coffee_room.GetComponent<BoxCollider>().bounds.Contains(transform.position))
         {
-            Debug.Log("Je suis à la Cafet'");
+           // Debug.Log("Je suis à la Cafet'");
             flagInRoom = true;
             SelectCoffeeMachine();
             agent.SetDestination(selected_coffeemachine.transform.position);
         }
         if (!flagTakeCoffee && selected_coffeemachine != null && (selected_coffeemachine.transform.position - transform.position).magnitude < 0.5f)
         {
-            Debug.Log("Je prends mon café");
+            //Debug.Log("Je prends mon café");
             agent.isStopped = true;
             flagTakeCoffee = true;
             TakeCoffee();
         }
         if (!FlagHaveCoffee && flagTakeCoffee && Time.time > coffee_take_timeout)
         {
-            Debug.Log("Je bois mon café");
+          //  Debug.Log("Je bois mon café");
             FlagHaveCoffee = true;
         }
 	}
