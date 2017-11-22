@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45047808, g: 0.49834204, b: 0.5636874, a: 1}
+  m_IndirectSpecularColor: {r: 0.45047784, g: 0.4983412, b: 0.5636869, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -5754,7 +5754,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 638480485}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0e31021f3214e6409285ef59f3d7e54, type: 3}
   m_Name: 
@@ -10641,7 +10641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1159275949
 Transform:
   m_ObjectHideFlags: 0
@@ -16810,6 +16810,7 @@ GameObject:
   - component: {fileID: 2052300183}
   - component: {fileID: 2052300182}
   - component: {fileID: 2052300187}
+  - component: {fileID: 2052300188}
   m_Layer: 0
   m_Name: Employee
   m_TagString: Untagged
@@ -16916,6 +16917,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eed059db6129234488cfd12ab4f9c93c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2052300188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2052300181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2b866454fe43c408a04ef4de9cd220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RaycastStart: {x: 1, y: 0, z: 0}
+  ViewAngle: 45
+  Player: {fileID: 136733986}
+  DisplayRaycast: 1
 --- !u!4 &2055308706 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4898230556476382, guid: 903e2e5abd4bc8d4b9c24348c8f8a6bb,
