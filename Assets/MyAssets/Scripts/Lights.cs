@@ -12,7 +12,7 @@ public class Lights : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Controller = Camera.main.gameObject;
+		Controller = GameObject.Find ("LobbyCamera");//Camera.main.gameObject;
 
 		if (Controller == null)
 			Debug.Log ("No Camera Found");
