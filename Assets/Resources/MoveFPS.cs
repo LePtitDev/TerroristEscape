@@ -31,32 +31,34 @@ public class MoveFPS : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (_view.isMine || !_network.useNetwork) {
 
-		float move_h = Input.GetAxis ("Horizontal");
-		float move_v = Input.GetAxis ("Vertical");
+			float move_h = Input.GetAxis ("Horizontal");
+			float move_v = Input.GetAxis ("Vertical");
 
-		//transform.position += new Vector3 (move_h, 0, move_v) * Time.deltaTime * movementSpeed;
-		transform.Translate(new Vector3 (move_h, 0, move_v) * Time.deltaTime * movementSpeed);
+			//transform.position += new Vector3 (move_h, 0, move_v) * Time.deltaTime * movementSpeed;
+			transform.Translate (new Vector3 (move_h, 0, move_v) * Time.deltaTime * movementSpeed);
 
-		float mouse_x = Input.GetAxisRaw ("Mouse X") * Time.deltaTime * horizontalMouseSpeed;
-		float mouse_y = Input.GetAxisRaw ("Mouse Y") * Time.deltaTime * vertiaclMouseSpeed;
+			float mouse_x = Input.GetAxisRaw ("Mouse X") * Time.deltaTime * horizontalMouseSpeed;
+			float mouse_y = Input.GetAxisRaw ("Mouse Y") * Time.deltaTime * vertiaclMouseSpeed;
 
-		pitch += mouse_x * 180.0f / Mathf.PI;
-		yaw += mouse_y * 180.0f / Mathf.PI;
+			pitch += mouse_x * 180.0f / Mathf.PI;
+			yaw += mouse_y * 180.0f / Mathf.PI;
 
-		if (yaw >= 89)
-			yaw = 89;
-		if (yaw <= -89)
-			yaw = -89;
+			if (yaw >= 89)
+				yaw = 89;
+			if (yaw <= -89)
+				yaw = -89;
 
-		float x = Mathf.Cos (yaw * Mathf.PI / 180.0f);
-		float y = Mathf.Sin (yaw * Mathf.PI / 180.0f);
+			float x = Mathf.Cos (yaw * Mathf.PI / 180.0f);
+			float y = Mathf.Sin (yaw * Mathf.PI / 180.0f);
 
-		transform.localEulerAngles = new Vector3 (0, pitch, 0);
+			transform.localEulerAngles = new Vector3 (0, pitch, 0);
 
-		cameraTarget.transform.localPosition = localPositionTarget + new Vector3 (0,y,x);
+			cameraTarget.transform.localPosition = localPositionTarget + new Vector3 (0, y, x);
 
-		_camera.transform.position = cameraPosition.transform.position;
-		_camera.transform.LookAt (cameraTarget.transform.position);
+			_camera.transform.position = cameraPosition.transform.position;
+			_camera.transform.LookAt (cameraTarget.transform.position);
+		}
 	}
 }

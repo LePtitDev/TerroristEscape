@@ -40,10 +40,8 @@ public class Locker : MonoBehaviour {
 		
 		if ((activable.isOpened () || activable.isClosing ()) && timeActual >= timeBeforeNextAction && playerController != null) {
 
-			Debug.Log ("Activation");
 
 			if (nobodyInside) {
-				Debug.Log ("Enter");
 				_camera.transform.position = m_camera.transform.position;
 				_camera.transform.rotation = m_camera.transform.rotation;
 
@@ -52,7 +50,6 @@ public class Locker : MonoBehaviour {
 				previousPosition = playerController.transform.position;
 				playerController.transform.position = m_camera.transform.position - Vector3.up * 0.5f;
 			} else {
-				Debug.Log ("Exit");
 				playerController.transform.position = previousPosition;
 				playerController.GetComponent<MoveFPS> ().enabled = true;
 			}

@@ -22,7 +22,7 @@ public class Global : MonoBehaviour {
 		screensLight = enableScreensLight;
 		distanceLight = distanceMaxLight;
 
-		UnityEditor.PlayerSettings.MTRendering = false;
+		//UnityEditor.PlayerSettings.MTRendering = false;
 
 	}
 	

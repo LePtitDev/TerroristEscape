@@ -16,7 +16,7 @@ public class NetworkManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log ("Status: " + PhotonNetwork.connectionStateDetailed.ToString ());
+		//Debug.Log ("Status: " + PhotonNetwork.connectionStateDetailed.ToString ());
 	}
 
 	public void OnJoinedLobby(){
