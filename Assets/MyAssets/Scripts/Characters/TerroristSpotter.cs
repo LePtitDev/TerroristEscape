@@ -65,7 +65,8 @@ public class TerroristSpotter : MonoBehaviour {
                         if (!_spotted)
                         {
                             _spotted = true;
-                            OnSpotted.Invoke(gameObject);
+                            if (OnSpotted != null)
+                                OnSpotted.Invoke(gameObject);
                             Debug.Log("Spotted!");
                         }
                     }
@@ -76,7 +77,8 @@ public class TerroristSpotter : MonoBehaviour {
         if (!collided && _spotted)
         {
             _spotted = false;
-            OnLost.Invoke(gameObject);
+            if (OnLost != null)
+                OnLost.Invoke(gameObject);
             Debug.Log("Lost!");
         }
         if (DisplayRaycast)
