@@ -14,6 +14,9 @@ public class Locker : MonoBehaviour {
 	private bool nobodyInside = true;
 
 	private GameObject playerController = null;
+	private GameObject _camera;
+
+	private Vector3 previousPosition;
 
 	// Use this for initialization
 	void Start () {
@@ -22,29 +25,38 @@ public class Locker : MonoBehaviour {
 
 		if (activable == null)
 			Debug.Log ("ChangeCamera script need Activable script!");
+
+		_camera = GameObject.Find ("LobbyCamera");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if ((activable.isOpened () || activable.isClosing ()) && timeActual >= timeBeforeNextAction) {
+
+		if(playerController == null)
+			playerController = GameObject.Find ("Server_FPS(Clone)");
+
+		if (timeActual < timeBeforeNextAction)
+			timeActual += Time.deltaTime;
+		
+		if ((activable.isOpened () || activable.isClosing ()) && timeActual >= timeBeforeNextAction && playerController != null) {
+
 
 			if (nobodyInside) {
-				camera_actionner = activable.getLastActionner ().GetComponent<Camera> ();
-				playerController = activable.getLastActionner ().transform.parent.gameObject;
+				_camera.transform.position = m_camera.transform.position;
+				_camera.transform.rotation = m_camera.transform.rotation;
+
+				playerController.GetComponent<MoveFPS> ().enabled = false;
+
+				previousPosition = playerController.transform.position;
+				playerController.transform.position = m_camera.transform.position - Vector3.up * 0.5f;
+			} else {
+				playerController.transform.position = previousPosition;
+				playerController.GetComponent<MoveFPS> ().enabled = true;
 			}
-
-			camera_actionner.enabled = !camera_actionner.enabled;
-			m_camera.enabled = !m_camera.enabled;
-
-			playerController.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController> ().enabled = camera_actionner.enabled;
-			playerController.GetComponent<CharacterController> ().enabled = camera_actionner.enabled;
 
 			nobodyInside = !nobodyInside;
 			timeActual = 0.0f;
 		}
-
-		if (timeActual < timeBeforeNextAction)
-			timeActual += Time.deltaTime;
 	}
 
 	public bool isPlayerInside(){
