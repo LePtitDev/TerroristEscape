@@ -1,0 +1,27 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ARCamera : MonoBehaviour {
+
+	private GameObject lobbyCamera;
+	private NetworkManager _network;
+
+	// Use this for initialization
+	void Start () {
+		_network = GameObject.Find ("NetworkManager").GetComponent<NetworkManager> ();
+
+		lobbyCamera = GameObject.Find ("LobbyCamera");
+	}
+	
+	// Update is called once per frame
+	void Update () {
+
+		bool isClient = _network.useNetwork && PhotonNetwork.inRoom && !PhotonNetwork.isMasterClient;
+
+		if (isClient) {
+			lobbyCamera.SetActive (false);
+		}
+		gameObject.transform.GetChild(0).gameObject.SetActive (isClient);
+	}
+}
