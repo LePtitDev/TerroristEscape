@@ -49,10 +49,12 @@ public class Locker : MonoBehaviour {
 
 				previousPosition = playerController.transform.position;
 				playerController.transform.position = m_camera.transform.position - Vector3.up * 0.5f;
+                playerController.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
 			} else {
 				playerController.transform.position = previousPosition;
 				playerController.GetComponent<MoveFPS> ().enabled = true;
-			}
+                playerController.transform.localScale = new Vector3(1f, 1f, 1f);
+            }
 
 			nobodyInside = !nobodyInside;
 			timeActual = 0.0f;

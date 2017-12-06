@@ -8,7 +8,7 @@ public class TerroristSpotter : MonoBehaviour {
     /// <summary>
     /// Position de départ du raycast par rapport à l'objet
     /// </summary>
-    public Vector3 RaycastStart;
+    public GameObject RaycastStart;
 
     /// <summary>
     /// Angle de vue (en degrés)
@@ -45,26 +45,31 @@ public class TerroristSpotter : MonoBehaviour {
     /// </summary>
     public bool DisplayRaycast;
 
+    void Start() {
+        if (GameObject.Find("NetworkManager").GetComponent<NetworkManager>().useNetwork)
+            enabled = false;
+    }
+
     // Update is called once per frame
     void Update () {
-        Vector3 rayStart = transform.position + transform.rotation * RaycastStart;
+        Vector3 rayStart = RaycastStart.transform.position;
         RaycastHit[] hits;
         Ray ray = new Ray(rayStart, Player.transform.position - rayStart);
-        bool collided = false;
+        bool lastSpot = _spotted;
+        _spotted = false;
         if (Vector3.Angle(transform.forward, Player.transform.position - rayStart) <= ViewAngle && (hits = Physics.RaycastAll(ray)).Length > 0)
         {
             List<RaycastHit> tmp = new List<RaycastHit>(hits);
-            tmp.Sort((a, b) => (rayStart - a.point).magnitude - (rayStart - b.point).magnitude <= 0f ? -1 : 1);
+            tmp.Sort((a, b) => a.distance < b.distance ? -1 : 1);
             foreach (RaycastHit r in tmp)
             {
-                if (r.collider.tag != "IgnoreRaycast")
+                if (!IgnoreCollider(r.collider))
                 {
-                    if (r.collider.gameObject == Player)
+                    if (r.collider.tag == "Player")
                     {
-                        collided = true;
-                        if (!_spotted)
+                        _spotted = true;
+                        if (!lastSpot)
                         {
-                            _spotted = true;
                             if (OnSpotted != null)
                                 OnSpotted.Invoke(gameObject);
                             Debug.Log("Spotted!");
@@ -74,15 +79,24 @@ public class TerroristSpotter : MonoBehaviour {
                 }
             }
         }
-        if (!collided && _spotted)
+        if (lastSpot && !_spotted)
         {
-            _spotted = false;
             if (OnLost != null)
                 OnLost.Invoke(gameObject);
             Debug.Log("Lost!");
         }
         if (DisplayRaycast)
-            DrawLine(transform.position + RaycastStart, Player.transform.position, Color.red, Time.deltaTime);
+            DrawLine(rayStart, Player.transform.position, Spotted ? Color.green : Color.red, Time.deltaTime);
+    }
+
+    // Indicate if ignore collider
+    private bool IgnoreCollider(Collider collider)
+    {
+        return collider.tag != "Tag_Wall" &&
+               collider.tag != "Tag_Floor" &&
+               collider.tag != "Tag_Door" &&
+               collider.tag != "Tag_Locker" &&
+               collider.tag != "Player";
     }
 
     // Material for group displaying

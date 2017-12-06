@@ -8,6 +8,9 @@ TagManager:
   - Tag_Window
   - Tag_Sink
   - Tag_NPC
+  - Tag_Wall
+  - Tag_Floor
+  - Tag_Locker
   layers:
   - Default
   - TransparentFX
