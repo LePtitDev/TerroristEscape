@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerPositionHiddingPlace : MonoBehaviour {
 
+    public Vector3 Position;
+
 	public GameObject hiddingPlace;
 
 	private float fitness_temp = 0.0f;
@@ -16,8 +18,19 @@ public class PlayerPositionHiddingPlace : MonoBehaviour {
 	private Activable activable;
 
 	// Use this for initialization
-	void Start () {
-		locker = hiddingPlace.GetComponent<Locker> ();
+	void Start ()
+    {
+        Position = transform.position;
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).name == "Position")
+            {
+                Position = transform.GetChild(i).transform.position;
+                Destroy(transform.GetChild(i).gameObject);
+                break;
+            }
+        }
+        locker = hiddingPlace.GetComponent<Locker> ();
 		activable = hiddingPlace.GetComponent<Activable> ();
 	}
 	

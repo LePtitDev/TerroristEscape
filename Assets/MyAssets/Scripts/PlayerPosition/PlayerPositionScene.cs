@@ -3,21 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerPositionScene : MonoBehaviour {
-
+    
 	private float[] tab_fitness;
 	private float[] tab_weights;
 	private float raison = 0.5f;
 
 	// Use this for initialization
 	void Start () {
-		tab_fitness = new float[transform.childCount];
+        tab_fitness = new float[transform.childCount];
 		tab_weights = new float[transform.childCount];
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		for (int i = 0; i < tab_fitness.Length; i++) {
-			tab_fitness [i] = transform.GetChild (i).gameObject.GetComponent<PlayerPositionStep> ().getFitnessTotal ();
+            PlayerPositionStep ps = transform.GetChild(i).gameObject.GetComponent<PlayerPositionStep>();
+            if (ps != null)
+                tab_fitness [i] = ps.getFitnessTotal ();
 		}
 		/*
 		GameObject step = getNextStep ();

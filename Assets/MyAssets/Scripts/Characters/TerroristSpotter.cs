@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.AI;
 
 public class TerroristSpotter : MonoBehaviour {
 
@@ -45,9 +46,42 @@ public class TerroristSpotter : MonoBehaviour {
     /// </summary>
     public bool DisplayRaycast;
 
+    /// <summary>
+    /// Nav mesh agent controller
+    /// </summary>
+    private NavMeshAgent navmesh;
+
+    /// <summary>
+    /// Next step to go
+    /// </summary>
+    private GameObject target_step;
+
+    /// <summary>
+    /// Next room to go
+    /// </summary>
+    private GameObject target_room;
+
+    /// <summary>
+    /// Next hidding place to go
+    /// </summary>
+    private GameObject target_hidding;
+
+    /// <summary>
+    /// Position in last update
+    /// </summary>
+    private Vector3 lastPosition;
+
     void Start() {
         if (GameObject.Find("NetworkManager").GetComponent<NetworkManager>().useNetwork)
+        {
             enabled = false;
+            return;
+        }
+        navmesh = GetComponent<NavMeshAgent>();
+        target_step = null;
+        target_room = null;
+        target_hidding = null;
+        lastPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -72,7 +106,7 @@ public class TerroristSpotter : MonoBehaviour {
                         {
                             if (OnSpotted != null)
                                 OnSpotted.Invoke(gameObject);
-                            Debug.Log("Spotted!");
+                            //Debug.Log("Spotted!");
                         }
                     }
                     break;
@@ -83,10 +117,47 @@ public class TerroristSpotter : MonoBehaviour {
         {
             if (OnLost != null)
                 OnLost.Invoke(gameObject);
-            Debug.Log("Lost!");
+            //Debug.Log("Lost!");
         }
         if (DisplayRaycast)
             DrawLine(rayStart, Player.transform.position, Spotted ? Color.green : Color.red, Time.deltaTime);
+        if (lastPosition != transform.position)
+        {
+            lastPosition = transform.position;
+            return;
+        }
+        PlayerPositionScene playerposition = GameObject.FindObjectOfType<PlayerPositionScene>();
+        GameObject step = playerposition.getNextStep();
+        if (step == null)
+            return;
+        GameObject room = step.GetComponent<PlayerPositionStep>().getNextRoom();
+        if (room == null)
+        {
+            if (step != target_step)
+            {
+                target_step = step;
+                navmesh.SetDestination(step.GetComponent<PlayerPositionStep>().Position);
+                Debug.Log("Go to step " + step.name);
+            }
+            return;
+        }
+        GameObject hidding = room.GetComponent<PlayerPositionRoom>().getNextHiddingPlace();
+        if (hidding == null)
+        {
+            if (room != target_room)
+            {
+                target_room = room;
+                navmesh.SetDestination(room.GetComponent<PlayerPositionRoom>().Position);
+                Debug.Log("Go to room " + room.name);
+            }
+            return;
+        }
+        if (hidding != target_hidding)
+        {
+            target_hidding = hidding;
+            navmesh.SetDestination(hidding.GetComponent<PlayerPositionHiddingPlace>().Position);
+            Debug.Log("Go to hidding place " + hidding.name);
+        }
     }
 
     // Indicate if ignore collider

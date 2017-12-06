@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerPositionStep : MonoBehaviour {
 
+    public Vector3 Position;
+
 	private float fitness = 0.0f;
 	private float fitness_temp = 0.0f;
 
@@ -12,9 +14,22 @@ public class PlayerPositionStep : MonoBehaviour {
 	private float raison = 0.5f;
 
 	// Use this for initialization
-	void Start () {
-		tab_fitness = new float[transform.childCount];
-		tab_weights = new float[transform.childCount];
+	void Start ()
+    {
+        int cm = 0;
+        Position = transform.position;
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).name == "Position")
+            {
+                Position = transform.GetChild(i).transform.position;
+                Destroy(transform.GetChild(i).gameObject);
+                cm++;
+                break;
+            }
+        }
+        tab_fitness = new float[transform.childCount - cm];
+		tab_weights = new float[transform.childCount - cm];
 	}
 	
 	// Update is called once per frame
@@ -24,10 +39,14 @@ public class PlayerPositionStep : MonoBehaviour {
 		fitness_temp = 0.0f;
 
 		for (int i = 0; i < transform.childCount; i++) {
-			tab_fitness [i] = transform.GetChild (i).gameObject.GetComponent<PlayerPositionRoom> ().getFitnessTotal ();
+            PlayerPositionRoom pr = transform.GetChild(i).gameObject.GetComponent<PlayerPositionRoom>();
+            if (pr != null)
+            {
+                tab_fitness[i] = pr.getFitnessTotal();
 
-			fitness += transform.GetChild (i).gameObject.GetComponent<PlayerPositionRoom> ().getFitness ();
-			fitness_temp += transform.GetChild (i).gameObject.GetComponent<PlayerPositionRoom> ().getFitnessTemp ();
+                fitness += pr.getFitness();
+                fitness_temp += pr.getFitnessTemp();
+            }
 		}
 
 	}

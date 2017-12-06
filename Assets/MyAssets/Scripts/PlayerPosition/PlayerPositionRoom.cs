@@ -10,6 +10,8 @@ public class Pair {
 
 public class PlayerPositionRoom : MonoBehaviour {
 
+    public Vector3 Position;
+
 	public Pair[] activablesObjectsToTurnOff;
 
 	private float fitness = 0.0f;
@@ -27,10 +29,23 @@ public class PlayerPositionRoom : MonoBehaviour {
 	private float raison = 0.5f;
 
 	// Use this for initialization
-	void Start () {
-		tab_fitnessTemp = new float[transform.childCount];
-		tab_weights = new float[transform.childCount];
-	}
+	void Start ()
+    {
+        int cm = 0;
+        Position = transform.position;
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).name == "Position")
+            {
+                Position = transform.GetChild(i).transform.position;
+                Destroy(transform.GetChild(i).gameObject);
+                cm++;
+                break;
+            }
+        }
+        tab_fitnessTemp = new float[transform.childCount - cm];
+        tab_weights = new float[transform.childCount - cm];
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -47,8 +62,9 @@ public class PlayerPositionRoom : MonoBehaviour {
 		fitness_temp = 0.0f;
 
 		for (int i = 0; i < transform.childCount; i++) {
-			tab_fitnessTemp [i] = transform.GetChild (i).gameObject.GetComponent<PlayerPositionHiddingPlace> ().getFitnessTotal ();
-			fitness_temp += transform.GetChild (i).gameObject.GetComponent<PlayerPositionHiddingPlace> ().getFitnessTemp ();
+            PlayerPositionHiddingPlace pp = transform.GetChild(i).gameObject.GetComponent<PlayerPositionHiddingPlace>();
+            tab_fitnessTemp[i] = pp.getFitnessTotal();
+            fitness_temp += pp.getFitnessTemp();
 		}
 	}
 
