@@ -11,6 +11,7 @@ TagManager:
   - Tag_Wall
   - Tag_Floor
   - Tag_Locker
+  - Tag_Terrorist
   layers:
   - Default
   - TransparentFX

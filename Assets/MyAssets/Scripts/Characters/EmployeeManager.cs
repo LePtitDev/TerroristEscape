@@ -1,18 +1,32 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
-public class EmployeeManager : MonoBehaviour {
+public class EmployeeManager : PNJ_Controller {
 
-    MonoBehaviour currentTask;
+	///////////////
+	/// ACTIONS ///
+	///////////////
+	
+	/// <summary>
+	/// No action
+	/// </summary>
+	[ActionMethod]
+	public void Idle() {}
+	
+	////////////////
+	/// PERCEPTS ///
+	////////////////
 
-	// Use this for initialization
-	void Start () {
-        currentTask = gameObject.AddComponent<TaskCoffeeBreak>();
+	/// <summary>
+	/// Indicate if has found a target
+	/// </summary>
+	[PerceptMethod]
+	public bool HasTarget()
+	{
+		return false;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

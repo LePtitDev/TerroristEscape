@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.AI;
 
-public class TerroristSpotter : MonoBehaviour {
+public class TerroristSpotter : PNJ_Controller {
 
     /// <summary>
     /// Position de départ du raycast par rapport à l'objet
@@ -33,19 +33,6 @@ public class TerroristSpotter : MonoBehaviour {
     [SerializeField]
     public UnityEvent<GameObject> OnLost;
 
-    // Indique si le joueur est visible par le terroriste
-    private bool _spotted = true;
-
-    /// <summary>
-    /// Indique si le joueur est visible par le terroriste
-    /// </summary>
-    public bool Spotted { get { return _spotted; } }
-
-    /// <summary>
-    /// Affiche le raycast
-    /// </summary>
-    public bool DisplayRaycast;
-
     /// <summary>
     /// Nav mesh agent controller
     /// </summary>
@@ -71,12 +58,15 @@ public class TerroristSpotter : MonoBehaviour {
     /// </summary>
     private Vector3 lastPosition;
 
-    void Start() {
+    protected override void Start() {
+        base.Start();
         if (GameObject.Find("NetworkManager").GetComponent<NetworkManager>().useNetwork)
         {
             enabled = false;
             return;
         }
+        if (Player == null)
+            Player = GameObject.Find("LobbyCamera");
         navmesh = GetComponent<NavMeshAgent>();
         target_step = null;
         target_room = null;
@@ -85,79 +75,10 @@ public class TerroristSpotter : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
-        Vector3 rayStart = RaycastStart.transform.position;
-        RaycastHit[] hits;
-        Ray ray = new Ray(rayStart, Player.transform.position - rayStart);
-        bool lastSpot = _spotted;
-        _spotted = false;
-        if (Vector3.Angle(transform.forward, Player.transform.position - rayStart) <= ViewAngle && (hits = Physics.RaycastAll(ray)).Length > 0)
-        {
-            List<RaycastHit> tmp = new List<RaycastHit>(hits);
-            tmp.Sort((a, b) => a.distance < b.distance ? -1 : 1);
-            foreach (RaycastHit r in tmp)
-            {
-                if (!IgnoreCollider(r.collider))
-                {
-                    if (r.collider.tag == "Player")
-                    {
-                        _spotted = true;
-                        if (!lastSpot)
-                        {
-                            if (OnSpotted != null)
-                                OnSpotted.Invoke(gameObject);
-                            //Debug.Log("Spotted!");
-                        }
-                    }
-                    break;
-                }
-            }
-        }
-        if (lastSpot && !_spotted)
-        {
-            if (OnLost != null)
-                OnLost.Invoke(gameObject);
-            //Debug.Log("Lost!");
-        }
-        if (DisplayRaycast)
-            DrawLine(rayStart, Player.transform.position, Spotted ? Color.green : Color.red, Time.deltaTime);
-        if (lastPosition != transform.position)
-        {
-            lastPosition = transform.position;
-            return;
-        }
-        PlayerPositionScene playerposition = GameObject.FindObjectOfType<PlayerPositionScene>();
-        GameObject step = playerposition.getNextStep();
-        if (step == null)
-            return;
-        GameObject room = step.GetComponent<PlayerPositionStep>().getNextRoom();
-        if (room == null)
-        {
-            if (step != target_step)
-            {
-                target_step = step;
-                navmesh.SetDestination(step.GetComponent<PlayerPositionStep>().Position);
-                Debug.Log("Go to step " + step.name);
-            }
-            return;
-        }
-        GameObject hidding = room.GetComponent<PlayerPositionRoom>().getNextHiddingPlace();
-        if (hidding == null)
-        {
-            if (room != target_room)
-            {
-                target_room = room;
-                navmesh.SetDestination(room.GetComponent<PlayerPositionRoom>().Position);
-                Debug.Log("Go to room " + room.name);
-            }
-            return;
-        }
-        if (hidding != target_hidding)
-        {
-            target_hidding = hidding;
-            navmesh.SetDestination(hidding.GetComponent<PlayerPositionHiddingPlace>().Position);
-            Debug.Log("Go to hidding place " + hidding.name);
-        }
+    protected override void Update () {
+        
+        base.Update();
+        lastPosition = transform.position;
     }
 
     // Indicate if ignore collider
@@ -170,53 +91,143 @@ public class TerroristSpotter : MonoBehaviour {
                collider.tag != "Player";
     }
 
-    // Material for group displaying
-    private static Material lineMaterial = null;
+    // Terrorist target
+    private Vector3? _target = null;
 
-    // lineMaterial accessor
-    public static Material LineMaterial
+    // Player gameObject
+    private GameObject _player = null;
+
+    /// <summary>
+    /// Indicate if player is visible
+    /// </summary>
+    public bool Spotted { get { return _player != null; } }
+    
+    ///////////////
+    /// ACTIONS ///
+    ///////////////
+	
+    /// <summary>
+    /// No action
+    /// </summary>
+    [ActionMethod]
+    public void Idle() {}
+
+    /// <summary>
+    /// Move to target
+    /// </summary>
+    [ActionMethod]
+    public void MoveToPlayer()
     {
-        get
+        if (_player != null)
+            navmesh.SetDestination(_player.transform.position);
+    }
+	
+    ////////////////
+    /// PERCEPTS ///
+    ////////////////
+
+    /// <summary>
+    /// Indicate if see the player
+    /// </summary>
+    [PerceptMethod]
+    [ActionLink("MoveToPlayer", 2f)]
+    public bool SeePlayer()
+    {
+        Vector3 rayStart = RaycastStart.transform.position;
+        RaycastHit[] hits;
+        Ray ray = new Ray(rayStart, Player.transform.position - rayStart);
+        bool lastSpot = Spotted;
+        _player = null;
+        if (Vector3.Angle(transform.forward, Player.transform.position - rayStart) <= ViewAngle && (hits = Physics.RaycastAll(ray)).Length > 0)
         {
-            CreateLineMaterial();
-            return lineMaterial;
+            List<RaycastHit> tmp = new List<RaycastHit>(hits);
+            tmp.Sort((a, b) => a.distance < b.distance ? -1 : 1);
+            foreach (RaycastHit r in tmp)
+            {
+                if (!IgnoreCollider(r.collider))
+                {
+                    if (r.collider.tag == "Player")
+                    {
+                        _player = r.collider.gameObject;
+                        if (!lastSpot)
+                        {
+                            if (OnSpotted != null)
+                                OnSpotted.Invoke(gameObject);
+                            //Debug.Log("Spotted!");
+                        }
+                    }
+                    break;
+                }
+            }
         }
-    }
-
-    // Draw the patch group
-    public static void DrawLine(Vector3 start, Vector3 end, Color color, float duration = 0.1f, float width = 0.1f)
-    {
-        GameObject myLine = new GameObject();
-        myLine.transform.position = start;
-        myLine.AddComponent<LineRenderer>();
-        LineRenderer lr = myLine.GetComponent<LineRenderer>();
-        lr.material = LineMaterial;
-        lr.startColor = color;
-        lr.endColor = color;
-        lr.startWidth = width;
-        lr.endWidth = width;
-        lr.SetPosition(0, start);
-        lr.SetPosition(1, end);
-        GameObject.Destroy(myLine, duration);
-    }
-
-    // Create the matrial
-    private static void CreateLineMaterial()
-    {
-        if (lineMaterial == null)
+        if (lastSpot && !Spotted)
         {
-            // Unity has a built-in shader that is useful for drawing
-            // simple colored things.
-            Shader shader = Shader.Find("Hidden/Internal-Colored");
-            lineMaterial = new Material(shader);
-            lineMaterial.hideFlags = HideFlags.HideAndDontSave;
-            // Turn on alpha blending
-            lineMaterial.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-            lineMaterial.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-            // Turn backface culling off
-            lineMaterial.SetInt("_Cull", (int)UnityEngine.Rendering.CullMode.Off);
-            // Turn off depth writes
-            lineMaterial.SetInt("_ZWrite", 0);
+            if (OnLost != null)
+                OnLost.Invoke(gameObject);
+            //Debug.Log("Lost!");
         }
+        return Spotted;
     }
+
+    /// <summary>
+    /// Change room
+    /// </summary>
+    /// <returns></returns>
+    [PerceptMethod]
+    [ActionLink("Idle", 0f)]
+    public bool ChangeRoom()
+    {
+        if (lastPosition != transform.position)
+        {
+            lastPosition = transform.position;
+            return false;
+        }
+        PlayerPositionScene playerposition = GameObject.FindObjectOfType<PlayerPositionScene>();
+        GameObject step = playerposition.getNextStep();
+        if (step == null)
+            return false;
+        GameObject room = step.GetComponent<PlayerPositionStep>().getNextRoom();
+        if (room == null)
+        {
+            if (step != target_step)
+            {
+                target_step = step;
+                _target = step.GetComponent<PlayerPositionStep>().Position;
+                navmesh.SetDestination(_target.Value);
+                //Debug.Log("Go to step " + step.name);
+            }
+            return true;
+        }
+        GameObject hidding = room.GetComponent<PlayerPositionRoom>().getNextHiddingPlace();
+        if (hidding == null)
+        {
+            if (room != target_room)
+            {
+                target_room = room;
+                _target = room.GetComponent<PlayerPositionRoom>().Position;
+                navmesh.SetDestination(_target.Value);
+                //Debug.Log("Go to room " + room.name);
+            }
+            return true;
+        }
+        if (hidding != target_hidding)
+        {
+            target_hidding = hidding;
+            _target = hidding.GetComponent<PlayerPositionHiddingPlace>().Position;
+            navmesh.SetDestination(_target.Value);
+            //Debug.Log("Go to hidding place " + hidding.name);
+        }
+        return true;
+    }
+
+    /// <summary>
+    /// Indicate if hasn't found a target
+    /// </summary>
+    [PerceptMethod]
+    [ActionLink("Idle", 1.5f)]
+    public bool HasNotTarget()
+    {
+        return _target == null;
+    }
+    
 }
