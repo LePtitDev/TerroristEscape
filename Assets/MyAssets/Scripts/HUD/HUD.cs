@@ -26,10 +26,13 @@ public class HUD : MonoBehaviour {
 
 		maxStep = steps.Length - 1;
 		currentStep = maxStep;
+
+		Global.hideCursor = !cursor;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		cursor = !Global.hideCursor;
 
 		bool isInRoom = PhotonNetwork.inRoom && _network.useNetwork;
 		bool isClient = !PhotonNetwork.isMasterClient && isInRoom;
@@ -54,8 +57,10 @@ public class HUD : MonoBehaviour {
 		else
 			Cursor.lockState = CursorLockMode.Locked;
 
-		if (Input.GetKeyDown (KeyCode.Escape))
+		if (Input.GetKeyDown (KeyCode.Escape)) {
 			cursor = !cursor;
+			Global.hideCursor = !cursor;
+		}
 	}
 
 	public void OnButtonUp(){

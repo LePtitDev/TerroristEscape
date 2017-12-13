@@ -15,12 +15,24 @@ public class Global : MonoBehaviour {
 	public static bool screensLight;
 	public static float distanceLight;
 
+	public GameObject _canvas;
+	public GameObject _prefabScreenGameOver;
+
+	public static GameObject canvas;
+	public static GameObject prefabScreenGameOver;
+	public static bool GameOver = false;
+
+	public static bool hideCursor = true;
+
 	// Use this for initialization
 	void Start () {
 		controller = characterController;
 		soundEffect = prefabSoundEffect;
 		screensLight = enableScreensLight;
 		distanceLight = distanceMaxLight;
+
+		canvas = _canvas;
+		prefabScreenGameOver = _prefabScreenGameOver;
 
 		//UnityEditor.PlayerSettings.MTRendering = false;
 

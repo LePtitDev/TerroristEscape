@@ -21,11 +21,12 @@ public class PlayerPositionScene : MonoBehaviour {
             if (ps != null)
                 tab_fitness [i] = ps.getFitnessTotal ();
 		}
-		/*
+		//*
 		GameObject step = getNextStep ();
 		GameObject room = step.GetComponent<PlayerPositionStep> ().getNextRoom ();
-		GameObject hidd = room.GetComponent<PlayerPositionRoom> ().getNextHiddingPlace ();
-		Debug.Log ( ((hidd!=null)?hidd.name:"null") + " in the room " + room.name + " at step " + step.name );//*/
+		//GameObject hidd = room.GetComponent<PlayerPositionRoom> ().getNextHiddingPlace ();
+		//Debug.Log ( ((hidd!=null)?hidd.name:"null") + " in the room " + room.name + " at step " + step.name );
+		//Debug.Log ( "Room " + room.name +"(" + room.GetComponent<PlayerPositionRoom> ().getFitnessTotal() + ")" + " at step " + step.name + " (" + step.GetComponent<PlayerPositionStep> ().getFitnessTotal() + ")" );//*/
 	}
 
 	void calculateweights(){

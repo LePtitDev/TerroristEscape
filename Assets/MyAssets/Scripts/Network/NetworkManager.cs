@@ -5,6 +5,7 @@ using UnityEngine;
 public class NetworkManager : MonoBehaviour {
 
 	public GameObject prefabPlayer;
+	public GameObject prefabTerrorist;
 
 	public bool useNetwork;
 

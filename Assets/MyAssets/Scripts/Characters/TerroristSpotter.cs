@@ -53,32 +53,40 @@ public class TerroristSpotter : PNJ_Controller {
     /// </summary>
     private GameObject target_hidding;
 
-    /// <summary>
-    /// Position in last update
-    /// </summary>
-    private Vector3 lastPosition;
-
     protected override void Start() {
         base.Start();
-        if (GameObject.Find("NetworkManager").GetComponent<NetworkManager>().useNetwork)
+        /*if (GameObject.Find("NetworkManager").GetComponent<NetworkManager>().useNetwork)
         {
             enabled = false;
             return;
-        }
-        if (Player == null)
-            Player = GameObject.Find("LobbyCamera");
+        }*/
+		
+        //if (Player == null)
+        //    Player = GameObject.Find("LobbyCamera");
         navmesh = GetComponent<NavMeshAgent>();
+		_target = null;
         target_step = null;
         target_room = null;
         target_hidding = null;
-        lastPosition = transform.position;
     }
 
     // Update is called once per frame
     protected override void Update () {
-        
-        base.Update();
-        lastPosition = transform.position;
+
+		if (Player == null)
+			Player = GameObject.Find ("TerroristTarget");
+
+		if (_target != null) {
+			foreach (Transform t in GetComponentsInChildren<Transform>()) {
+				if (t.name == "Target") {
+					t.position = _target.Value;
+					break;
+				}
+			}
+		}
+		if (Player != null) {
+			base.Update ();
+		}
     }
 
     // Indicate if ignore collider
@@ -118,6 +126,7 @@ public class TerroristSpotter : PNJ_Controller {
     [ActionMethod]
     public void MoveToPlayer()
     {
+		//navmesh.isStopped = true;
         if (_player != null)
             navmesh.SetDestination(_player.transform.position);
     }
@@ -129,7 +138,8 @@ public class TerroristSpotter : PNJ_Controller {
     /// <summary>
     /// Indicate if see the player
     /// </summary>
-    [PerceptMethod]
+	[PerceptMethod]
+	[ActionLink("Idle", 0f)]
     [ActionLink("MoveToPlayer", 2f)]
     public bool SeePlayer()
     {
@@ -146,14 +156,22 @@ public class TerroristSpotter : PNJ_Controller {
             {
                 if (!IgnoreCollider(r.collider))
                 {
-                    if (r.collider.tag == "Player")
+					if (r.collider.tag == "Player" && r.collider.gameObject.transform.localScale.x > 0.1f)
                     {
+						Debug.Log ("SPOT");
                         _player = r.collider.gameObject;
+						_target = _player.transform.position;
                         if (!lastSpot)
                         {
                             if (OnSpotted != null)
                                 OnSpotted.Invoke(gameObject);
                             //Debug.Log("Spotted!");
+
+							if (!Global.GameOver) {
+								Instantiate (Global.prefabScreenGameOver, Global.canvas.transform);
+								Global.GameOver = true;
+							}
+
                         }
                     }
                     break;
@@ -169,30 +187,45 @@ public class TerroristSpotter : PNJ_Controller {
         return Spotted;
     }
 
+	/// <summary>
+	/// Indicate if not see the player
+	/// </summary>
+	[PerceptMethod]
+	[ActionLink("MoveToPlayer", 0f)]
+	public bool NoSeePlayer() {
+		return !Spotted;
+	}
+
     /// <summary>
     /// Change room
     /// </summary>
     /// <returns></returns>
     [PerceptMethod]
-    [ActionLink("Idle", 0f)]
+    [ActionLink("Idle", 2f)]
     public bool ChangeRoom()
-    {
-        if (lastPosition != transform.position)
-        {
-            lastPosition = transform.position;
-            return false;
-        }
+	{
+		//Debug.Log (_target);
+	/*
+		Debug.Log (_target);
+		if (_target != null && (_target.Value - transform.position).magnitude > 1f)
+			return false;
         PlayerPositionScene playerposition = GameObject.FindObjectOfType<PlayerPositionScene>();
         GameObject step = playerposition.getNextStep();
-        if (step == null)
-            return false;
+		if (step == null) {
+			Debug.Log ( "No step" );
+
+			_target = null;
+			return false;
+		}
         GameObject room = step.GetComponent<PlayerPositionStep>().getNextRoom();
         if (room == null)
-        {
+		{
+
+			Debug.Log ( "NextStep = " + step.name + "(" + step.GetComponent<PlayerPositionStep>().getFitnessTotal() + ") / No room)" );
             if (step != target_step)
             {
                 target_step = step;
-                _target = step.GetComponent<PlayerPositionStep>().Position;
+				_target = new Vector3 (0,1,0);//step.GetComponent<PlayerPositionStep>().Position;
                 navmesh.SetDestination(_target.Value);
                 //Debug.Log("Go to step " + step.name);
             }
@@ -200,7 +233,9 @@ public class TerroristSpotter : PNJ_Controller {
         }
         GameObject hidding = room.GetComponent<PlayerPositionRoom>().getNextHiddingPlace();
         if (hidding == null)
-        {
+		{
+
+			Debug.Log ( "NextRoom = " + step.name + "(" + step.GetComponent<PlayerPositionStep>().getFitnessTotal() + ") /" + room.name + "(" + room.GetComponent<PlayerPositionRoom>().getFitnessTotal() + ")" );
             if (room != target_room)
             {
                 target_room = room;
@@ -210,14 +245,29 @@ public class TerroristSpotter : PNJ_Controller {
             }
             return true;
         }
+
         if (hidding != target_hidding)
         {
             target_hidding = hidding;
             _target = hidding.GetComponent<PlayerPositionHiddingPlace>().Position;
             navmesh.SetDestination(_target.Value);
             //Debug.Log("Go to hidding place " + hidding.name);
-        }
-        return true;
+		}
+		Debug.Log ( "NextRoom = " + step.name + "(" + step.GetComponent<PlayerPositionStep>().getFitnessTotal() + ") /" + room.name + "(" + room.GetComponent<PlayerPositionRoom>().getFitnessTotal() + ")" );
+        return true;*/
+		
+		if (_target != null && (_target.Value - transform.position).magnitude > 1f)
+			return false;
+
+		GameObject step = GameObject.FindObjectOfType<PlayerPositionScene> ().getNextStep ();
+		GameObject room = step.GetComponent<PlayerPositionStep> ().getNextRoom ();
+
+		_target = room.GetComponent<PlayerPositionRoom>().Position;
+		navmesh.SetDestination(_target.Value);
+
+		//Debug.Log ( "NextRoom = " + step.name + "/" + room.name + " " +  _target.Value );
+
+		return true;
     }
 
     /// <summary>

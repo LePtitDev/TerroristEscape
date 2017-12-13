@@ -30,8 +30,10 @@ public class PhoneScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKeyDown (KeyCode.P))
+		if (Input.GetKeyDown (KeyCode.P)) {
 			phone = !phone;
+			Global.hideCursor = !phone;
+		}
 
 		if (phone && state == State.None) {
 			state = State.Keyboard;

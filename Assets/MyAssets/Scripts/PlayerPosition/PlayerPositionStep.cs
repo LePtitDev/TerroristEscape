@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerPositionStep : MonoBehaviour {
 
-    public Vector3 Position;
-
 	private float fitness = 0.0f;
 	private float fitness_temp = 0.0f;
 
@@ -16,20 +14,8 @@ public class PlayerPositionStep : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        int cm = 0;
-        Position = transform.position;
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            if (transform.GetChild(i).name == "Position")
-            {
-                Position = transform.GetChild(i).transform.position;
-                Destroy(transform.GetChild(i).gameObject);
-                cm++;
-                break;
-            }
-        }
-        tab_fitness = new float[transform.childCount - cm];
-		tab_weights = new float[transform.childCount - cm];
+        tab_fitness = new float[transform.childCount];
+		tab_weights = new float[transform.childCount];
 	}
 	
 	// Update is called once per frame

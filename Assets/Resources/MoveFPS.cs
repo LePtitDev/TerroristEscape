@@ -27,10 +27,16 @@ public class MoveFPS : MonoBehaviour {
 		localPositionTarget = cameraTarget.transform.localPosition;
 
 		_camera = GameObject.Find ("LobbyCamera");
+
+		Global.controller = gameObject;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (Global.GameOver)
+			return;
+
 		if (_view.isMine || !_network.useNetwork) {
 
 			float move_h = Input.GetAxis ("Horizontal");
