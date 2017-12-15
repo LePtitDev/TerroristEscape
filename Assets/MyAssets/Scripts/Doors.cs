@@ -98,6 +98,13 @@ public class Doors : MonoBehaviour {
 		transform.localEulerAngles = new Vector3 (angleBase.x,angleBase.y,angleBase.z+angle);
 	}
 
+	private void OnTriggerEnter(Collider other)
+	{
+		if (isOpenned() || other.tag != "Tag_Terrorist")
+			return;
+		DoorAction(other.gameObject);
+	}
+
 	public void Action(GameObject go){
 		if (timePoignee >= durationPoignee) {
 			timePoignee = 0.0f;

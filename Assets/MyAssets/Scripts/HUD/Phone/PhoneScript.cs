@@ -109,7 +109,14 @@ public class PhoneScript : MonoBehaviour {
 
 	public void PressCall(){
 		if (number.Length > 0)
+		{
 			state = State.CallOut;
+			if (number == "15" ||
+			    number == "17" ||
+			    number == "18" ||
+			    number == "112")
+				GameObject.FindObjectOfType<RescueTimer>().StartTimer();
+		}
 	}
 
 	public void PressReject(){
