@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 0
   HasPlatforms: 1
-  sourceProjectPath: C:\Users\Anthony\Desktop\Master\Son et musique\tp02\tp02.fspro
-  SourceProjectPathUnformatted: C:\Users\Anthony\Desktop\Master\Son et musique\tp02\tp02.fspro
-  SourceBankPathUnformatted: C:\Users\Anthony\Desktop\Master\Son et musique\tp02\Build
+  sourceProjectPath: Assets\FMODProject\SeriousGame.fspro
+  SourceProjectPathUnformatted: Assets\FMODProject\SeriousGame.fspro
+  SourceBankPathUnformatted: Assets\FMODProject\Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0

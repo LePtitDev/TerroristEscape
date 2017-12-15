@@ -12,15 +12,19 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114563590082729386}
-  - {fileID: 114776087670427624}
+  - {fileID: 114183525983286434}
+  - {fileID: 114898279526331652}
   EditorEvents:
-  - {fileID: 114336536130054270}
-  - {fileID: 114052786711614658}
-  - {fileID: 114593865524151240}
-  MasterBankRef: {fileID: 114776087670427624}
-  StringsBankRef: {fileID: 114563590082729386}
-  stringsBankWriteTime: 636431655588423752
+  - {fileID: 114605840251205302}
+  - {fileID: 114796763756117524}
+  - {fileID: 114579096462619654}
+  - {fileID: 114456998686114066}
+  - {fileID: 114243521434401778}
+  - {fileID: 114573769381489642}
+  - {fileID: 114451120438593124}
+  MasterBankRef: {fileID: 114898279526331652}
+  StringsBankRef: {fileID: 114183525983286434}
+  stringsBankWriteTime: 636489561822260958
   cacheVersion: 2
 --- !u!114 &114004685458660912
 MonoBehaviour:
@@ -226,6 +230,24 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114183525983286434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: Assets\FMODProject\Build\Desktop\Master Bank.strings.bank
+  lastModified: 636489561822260958
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1044
+  Exists: 1
 --- !u!114 &114190565370629440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,6 +278,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "Intensit\xE9"
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114215512578925462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
   Min: 0
   Max: 1
   Default: 0
@@ -291,6 +328,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "Intensit\xE9"
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114243521434401778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: "event:/Son_environnement/Machine_caf\xE9"
+  guid: b25f7f79ebb5d943a8bf1215694f7faf
+  Banks:
+  - {fileID: 114898279526331652}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+--- !u!114 &114306139512120102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Timer
   Min: 0
   Max: 1
   Default: 0
@@ -405,6 +478,27 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114451120438593124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Son_environnement/BouttonOFF
+  guid: fdb84f9eaaea9b44a27cbc5a8fb47a16
+  Banks:
+  - {fileID: 114898279526331652}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
 --- !u!114 &114453258862067116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,6 +514,27 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114456998686114066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music_ambiance/MusicPerdu
+  guid: afa748a0636af64d93bc396ec5d7774c
+  Banks:
+  - {fileID: 114898279526331652}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
 --- !u!114 &114493348935625664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,6 +598,27 @@ MonoBehaviour:
   - Name: Desktop
     Value: 810
   Exists: 1
+--- !u!114 &114573769381489642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Son_environnement/BouttonON
+  guid: de5a79735511c247bad37b34bb594b24
+  Banks:
+  - {fileID: 114898279526331652}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
 --- !u!114 &114575188074236842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,6 +640,27 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
+--- !u!114 &114579096462619654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Son_environnement/Toilette
+  guid: 66d430564bac5e46b208fee47b738264
+  Banks:
+  - {fileID: 114898279526331652}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
 --- !u!114 &114593865524151240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,6 +683,29 @@ MonoBehaviour:
   - {fileID: 114684410041786936}
   MinDistance: 1
   MaxDistance: 35
+--- !u!114 &114605840251205302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music_ambiance/AmbianceStressante
+  guid: 023597fd2ca3a844af18dd82c83a7f66
+  Banks:
+  - {fileID: 114898279526331652}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114306139512120102}
+  - {fileID: 114215512578925462}
+  MinDistance: 1
+  MaxDistance: 20
 --- !u!114 &114636616362289258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,6 +894,27 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114796763756117524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Son_environnement/Robinet
+  guid: 09b3fcd646a91246871455139e2c1048
+  Banks:
+  - {fileID: 114898279526331652}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
 --- !u!114 &114799004077860590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -804,6 +1005,25 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114898279526331652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Anthony\Desktop\Master\Jeux Serieux\TerroristEscape\Assets\FMODProject\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636489561822240947
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1965216
+  Exists: 1
 --- !u!114 &114906312625690340
 MonoBehaviour:
   m_ObjectHideFlags: 0

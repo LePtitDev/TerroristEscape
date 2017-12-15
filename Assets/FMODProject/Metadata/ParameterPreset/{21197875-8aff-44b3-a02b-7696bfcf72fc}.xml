@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{21197875-8aff-44b3-a02b-7696bfcf72fc}">
+        <property name="name">
+            <value>Intensity</value>
+        </property>
+        <relationship name="folder">
+            <destination>{b31dec49-b471-4777-aa23-08d086dbd073}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{ffbd724e-bad2-4c34-8dc7-44a2d960bc8a}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{ffbd724e-bad2-4c34-8dc7-44a2d960bc8a}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>
