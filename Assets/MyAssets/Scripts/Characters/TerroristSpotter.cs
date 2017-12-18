@@ -46,12 +46,17 @@ public class TerroristSpotter : PNJ_Controller {
     /// <summary>
     /// Next room to go
     /// </summary>
-    private GameObject target_room;
+	private GameObject target_room;
 
-    /// <summary>
-    /// Next hidding place to go
-    /// </summary>
-    private GameObject target_hidding;
+	/// <summary>
+	/// Next hidding place to go
+	/// </summary>
+	private GameObject target_hidding;
+
+	/// <summary>
+	/// Network Manager
+	/// </summary>
+	private NetworkManager _network;
 
     protected override void Start() {
         base.Start();
@@ -68,6 +73,8 @@ public class TerroristSpotter : PNJ_Controller {
         target_step = null;
         target_room = null;
         target_hidding = null;
+
+		_network = GameObject.Find ("NetworkManager").GetComponent<NetworkManager> ();
     }
 
     // Update is called once per frame
@@ -156,7 +163,7 @@ public class TerroristSpotter : PNJ_Controller {
             {
                 if (!IgnoreCollider(r.collider))
                 {
-					if (r.collider.tag == "Player" && r.collider.gameObject.transform.localScale.x > 0.1f && PhotonNetwork.isMasterClient)
+					if (r.collider.tag == "Player" && r.collider.gameObject.transform.localScale.x > 0.1f && (PhotonNetwork.isMasterClient || !_network.useNetwork))
                     {
                         _player = r.collider.gameObject;
 						_target = _player.transform.position;
