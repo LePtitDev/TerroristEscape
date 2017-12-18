@@ -156,9 +156,8 @@ public class TerroristSpotter : PNJ_Controller {
             {
                 if (!IgnoreCollider(r.collider))
                 {
-					if (r.collider.tag == "Player" && r.collider.gameObject.transform.localScale.x > 0.1f)
+					if (r.collider.tag == "Player" && r.collider.gameObject.transform.localScale.x > 0.1f && PhotonNetwork.isMasterClient)
                     {
-						Debug.Log ("SPOT");
                         _player = r.collider.gameObject;
 						_target = _player.transform.position;
                         if (!lastSpot)

@@ -25,6 +25,10 @@ public class Activable : MonoBehaviour {
 	public bool debug = false;
 
 	//Sons
+	public FMODUnity.StudioEventEmitter soundEmitter;
+	public bool soundWhenOpened;
+	public bool playAllsound;
+
 	/*
 	public ParticleSystem particuleSystem;
 	public bool activeWhenOpened;*/
@@ -76,6 +80,19 @@ public class Activable : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (soundEmitter != null && soundWhenOpened && (isOpen || isOpening()) && !soundEmitter.IsPlaying()) {
+			soundEmitter.Play ();
+		}
+		if (soundEmitter != null && soundWhenOpened && (isClose || isClosing()) && soundEmitter.IsPlaying() && !playAllsound) {
+			soundEmitter.Stop();
+		}
+		if (soundEmitter != null && !soundWhenOpened && (isOpen || isOpening()) && soundEmitter.IsPlaying() && !playAllsound) {
+			soundEmitter.Stop();
+		}
+		if (soundEmitter != null && !soundWhenOpened && (isClose || isClosing()) && !soundEmitter.IsPlaying()) {
+			soundEmitter.Play();
+		}
 
 		if(movableObject == null && autoClose && isOpen) {
 			isOpen = !isOpen;

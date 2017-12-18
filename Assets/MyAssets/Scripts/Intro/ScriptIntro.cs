@@ -47,6 +47,6 @@ public class ScriptIntro : MonoBehaviour {
 		this.gameObject.SetActive (false);
 		Player.GetComponent<MoveFPS> ().enabled = true;
 		started = false;
-
+		Global.animationEnded = true;
 	}
 }

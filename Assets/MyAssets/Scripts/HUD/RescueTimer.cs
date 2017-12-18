@@ -68,6 +68,13 @@ public class RescueTimer : MonoBehaviour
 	
 	// Update is called once per frame
 	private void Update () {
+
+		Global.timeLeft = 0;
+		Global.duration = Duration;
+
+		if(!_started)
+			Global.timeLeft = Duration;
+
 		if (!_started)
 			return;
 		if (_begin + Duration <= Time.time)
@@ -83,7 +90,9 @@ public class RescueTimer : MonoBehaviour
 			mil = ((int) (release * 100f) % 100);
 		_textTimer.text = (min < 10 ? "0" + min.ToString() : min.ToString()) + ":" +
 		                  (sec < 10 ? "0" + sec.ToString() : sec.ToString()) + ":" +
-		                  (mil < 10 ? "0" + mil.ToString() : mil.ToString());
+			(mil < 10 ? "0" + mil.ToString() : mil.ToString());
+
+		Global.timeLeft = release;
 	}
 
 	/// <summary>

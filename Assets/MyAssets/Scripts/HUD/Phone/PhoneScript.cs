@@ -22,13 +22,30 @@ public class PhoneScript : MonoBehaviour {
 	public string number = "";
 	private bool phone = false;
 
+	private NetworkManager _network;
+
 	// Use this for initialization
 	void Start () {
 		state = State.None;
+		_network = GameObject.Find ("NetworkManager").GetComponent<NetworkManager> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (Input.GetKeyDown (KeyCode.T))
+			Global.phoneRing = true;
+
+		if (GameObject.Find ("Server(Clone)") && GameObject.Find ("Server(Clone)").GetComponent<Server> ().phone) {
+			GameObject.Find ("Server(Clone)").GetComponent<Server> ().phone = false;
+			Global.phoneRing = true;
+		}
+
+		if (Global.phoneRing && !phone) {
+			state = State.CallIn;
+			phone = !phone;
+			Global.hideCursor = !phone;
+		}
 
 		if (Input.GetKeyDown (KeyCode.P)) {
 			phone = !phone;
@@ -42,11 +59,12 @@ public class PhoneScript : MonoBehaviour {
 			state = State.None;
 		}
 
-		phone_base.SetActive (state != State.None);
-		phone_keyboard.SetActive (state == State.Keyboard);
-		phone_callIn.SetActive (state == State.CallIn);
-		phone_callOut.SetActive (state == State.CallOut);
-		
+		bool canActivePhone = !_network.useNetwork || (_network.useNetwork && PhotonNetwork.isMasterClient);
+
+		phone_base.SetActive (state != State.None && canActivePhone);
+		phone_keyboard.SetActive (state == State.Keyboard && canActivePhone);
+		phone_callIn.SetActive (state == State.CallIn && canActivePhone);
+		phone_callOut.SetActive (state == State.CallOut && canActivePhone);
 
 		phone_text_keyboard.GetComponent<Text> ().text = number;
 		phone_text_calling.GetComponent<Text> ().text = number;
@@ -121,5 +139,6 @@ public class PhoneScript : MonoBehaviour {
 
 	public void PressReject(){
 		state = State.Keyboard;
+		Global.phoneRing = false;
 	}
 }

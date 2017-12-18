@@ -22,7 +22,12 @@ public class Global : MonoBehaviour {
 	public static GameObject prefabScreenGameOver;
 	public static bool GameOver = false;
 
+	public static float timeLeft;
+	public static float duration;
+
 	public static bool hideCursor = true;
+	public static bool animationEnded = false;
+	public static bool phoneRing = false;
 
 	// Use this for initialization
 	void Start () {

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114183525983286434}
-  - {fileID: 114898279526331652}
+  - {fileID: 114777567103256466}
   EditorEvents:
   - {fileID: 114605840251205302}
   - {fileID: 114796763756117524}
@@ -22,9 +22,10 @@ MonoBehaviour:
   - {fileID: 114243521434401778}
   - {fileID: 114573769381489642}
   - {fileID: 114451120438593124}
-  MasterBankRef: {fileID: 114898279526331652}
+  - {fileID: 114766433634597820}
+  MasterBankRef: {fileID: 114777567103256466}
   StringsBankRef: {fileID: 114183525983286434}
-  stringsBankWriteTime: 636491391225134410
+  stringsBankWriteTime: 636492115023323712
   cacheVersion: 2
 --- !u!114 &114004685458660912
 MonoBehaviour:
@@ -119,6 +120,21 @@ MonoBehaviour:
   - {fileID: 114837302824101834}
   MinDistance: 1
   MaxDistance: 35
+--- !u!114 &114106404935691192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114114301355899732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,6 +156,21 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 3
   MaxDistance: 25
+--- !u!114 &114116873592734618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Timer
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114121231385060044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,11 +273,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMODProject\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636491391225134410
+  lastModified: 636492115023323712
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1044
+    Value: 1080
   Exists: 1
 --- !u!114 &114190565370629440
 MonoBehaviour:
@@ -266,6 +297,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 659200
   Exists: 1
+--- !u!114 &114195217398218124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114208716608849866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,7 +391,7 @@ MonoBehaviour:
   Path: "event:/Son_environnement/Machine_caf\xE9"
   guid: b25f7f79ebb5d943a8bf1215694f7faf
   Banks:
-  - {fileID: 114898279526331652}
+  - {fileID: 114777567103256466}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -433,6 +479,21 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
+--- !u!114 &114346010972485632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114374737760124434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,6 +554,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114444070877437858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Timer
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114451120438593124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,7 +583,7 @@ MonoBehaviour:
   Path: event:/Son_environnement/BouttonOFF
   guid: fdb84f9eaaea9b44a27cbc5a8fb47a16
   Banks:
-  - {fileID: 114898279526331652}
+  - {fileID: 114777567103256466}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -558,7 +634,7 @@ MonoBehaviour:
   Path: event:/Music_ambiance/MusicPerdu
   guid: afa748a0636af64d93bc396ec5d7774c
   Banks:
-  - {fileID: 114898279526331652}
+  - {fileID: 114777567103256466}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -610,6 +686,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114507099265058380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114563590082729386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -642,7 +733,7 @@ MonoBehaviour:
   Path: event:/Son_environnement/BouttonON
   guid: de5a79735511c247bad37b34bb594b24
   Banks:
-  - {fileID: 114898279526331652}
+  - {fileID: 114777567103256466}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -684,7 +775,7 @@ MonoBehaviour:
   Path: event:/Son_environnement/Toilette
   guid: 66d430564bac5e46b208fee47b738264
   Banks:
-  - {fileID: 114898279526331652}
+  - {fileID: 114777567103256466}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -727,13 +818,13 @@ MonoBehaviour:
   Path: event:/Music_ambiance/AmbianceStressante
   guid: 023597fd2ca3a844af18dd82c83a7f66
   Banks:
-  - {fileID: 114898279526331652}
+  - {fileID: 114777567103256466}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114452753777388850}
-  - {fileID: 114334792329604580}
+  - {fileID: 114721457642564626}
+  - {fileID: 114695923723656038}
   MinDistance: 1
   MaxDistance: 20
 --- !u!114 &114636616362289258
@@ -766,6 +857,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114652586766309782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114656602123107994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,6 +884,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "Intensit\xE9"
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114661926839794986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Timer
   Min: 0
   Max: 1
   Default: 0
@@ -811,6 +932,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114676992718193224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Timer
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114684410041786936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -841,6 +977,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114695923723656038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114702159350055106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,6 +1012,36 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+--- !u!114 &114721457642564626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Timer
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114729898299035230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Timer
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114734032262408648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -876,6 +1057,27 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114766433634597820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Son_environnement/Phone
+  guid: d7d622b0a02e3f49b18104e47fef5d48
+  Banks:
+  - {fileID: 114777567103256466}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
 --- !u!114 &114776087670427624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -893,6 +1095,25 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 659200
+  Exists: 1
+--- !u!114 &114777567103256466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\Documents\Programmation\Unity\TerroristEscape\Assets\FMODProject\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636492115023278679
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1636704
   Exists: 1
 --- !u!114 &114790348424130324
 MonoBehaviour:
@@ -938,10 +1159,10 @@ MonoBehaviour:
   Path: event:/Son_environnement/Robinet
   guid: 09b3fcd646a91246871455139e2c1048
   Banks:
-  - {fileID: 114898279526331652}
+  - {fileID: 114777567103256466}
   IsStream: 1
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20

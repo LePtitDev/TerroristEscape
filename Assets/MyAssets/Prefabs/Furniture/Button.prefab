@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 65357530450545482}
   - component: {fileID: 114735035590217720}
   - component: {fileID: 114263478118574610}
+  - component: {fileID: 114182651560866530}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -56,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1153428283785626}
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 5.51189, y: 0.691, z: -4.4114885}
+  m_LocalPosition: {x: 3.7103, y: 1.079, z: -5.082}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4579520015303378}
@@ -195,6 +196,31 @@ MonoBehaviour:
   enableWhenOpened: 0
   blockRaycast: 0
   debug: 0
+  soundEmitter: {fileID: 0}
+  soundWhenOpened: 0
+  playAllsound: 0
+--- !u!114 &114182651560866530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1153428283785626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Son_environnement/BouttonOFF
+  PlayEvent: 0
+  StopEvent: 2
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!114 &114263478118574610
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -208,7 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event: event:/Son_environnement/BouttonON
   PlayEvent: 0
-  StopEvent: 0
+  StopEvent: 2
   CollisionTag: 
   AllowFadeout: 1
   TriggerOnce: 0
@@ -229,3 +255,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnable: 1
+  soundOn: {fileID: 114263478118574610}
+  soundOff: {fileID: 114182651560866530}

@@ -34,6 +34,11 @@ public class MoveFPS : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (Global.GameOver) {
+			GetComponent<Rigidbody> ().useGravity = false;
+			GetComponent<Rigidbody> ().velocity =  Vector3.zero;
+		}
+
 		if (Global.GameOver)
 			return;
 

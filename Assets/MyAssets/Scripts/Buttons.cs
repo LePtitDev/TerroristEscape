@@ -7,6 +7,9 @@ public class Buttons : MonoBehaviour {
 	public bool isEnable = true;
 	private bool prev_state = true;
 
+	public FMODUnity.StudioEventEmitter soundOn;
+	public FMODUnity.StudioEventEmitter soundOff;
+
 	private Activable activable;
 
 	// Use this for initialization
@@ -29,6 +32,13 @@ public class Buttons : MonoBehaviour {
 			EnableLight (gameObject, isEnable);
 			EnableLightMesh (gameObject, isEnable);
 			prev_state = isEnable;
+		}
+
+		if (activable.isClosing () && !soundOff.IsPlaying() ) {
+			soundOff.Play ();
+		}
+		if (activable.isOpening () && !soundOn.IsPlaying() ) {
+			soundOn.Play ();
 		}
 	}
 

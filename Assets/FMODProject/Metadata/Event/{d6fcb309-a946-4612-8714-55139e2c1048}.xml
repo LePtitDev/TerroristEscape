@@ -70,6 +70,9 @@
         <relationship name="modules">
             <destination>{ec284d0c-de66-4517-8ad3-7fd884181b78}</destination>
         </relationship>
+        <relationship name="markers">
+            <destination>{87035383-126c-46ea-bcb7-37bd15302482}</destination>
+        </relationship>
     </object>
     <object class="EventMixerMaster" id="{e608c263-d6c7-4532-8169-93f23272fcc0}">
         <relationship name="effectChain">
@@ -90,13 +93,19 @@
     <object class="MixerBusPanner" id="{23717d5d-a428-450c-a2d7-622884edeb1a}"/>
     <object class="SingleSound" id="{ec284d0c-de66-4517-8ad3-7fd884181b78}">
         <property name="length">
-            <value>10.002834467120181</value>
+            <value>5.5</value>
+        </property>
+        <property name="timelockedOffset">
+            <value>0.5</value>
         </property>
         <relationship name="audioFile">
             <destination>{088995f5-08d7-40c9-838c-ff84d749b8cf}</destination>
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{0957d8ae-9b80-47dc-8273-ae016f72d613}">
+        <property name="volume">
+            <value>-20</value>
+        </property>
         <property name="name">
             <value>Audio 1</value>
         </property>
@@ -108,6 +117,20 @@
         </relationship>
         <relationship name="output">
             <destination>{e608c263-d6c7-4532-8169-93f23272fcc0}</destination>
+        </relationship>
+    </object>
+    <object class="LoopRegion" id="{87035383-126c-46ea-bcb7-37bd15302482}">
+        <property name="position">
+            <value>0</value>
+        </property>
+        <property name="length">
+            <value>5.5</value>
+        </property>
+        <relationship name="timeline">
+            <destination>{ee0449d8-df00-41e1-97d6-c7073f846098}</destination>
+        </relationship>
+        <relationship name="markerTrack">
+            <destination>{4fa81f32-ad5b-4c5a-bf83-ccd40635bd11}</destination>
         </relationship>
     </object>
     <object class="MixerBusEffectChain" id="{87cbf6e3-99ab-4cec-8508-2e9fcedc17e4}">

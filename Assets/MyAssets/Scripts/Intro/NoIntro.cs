@@ -8,8 +8,10 @@ public class NoIntro : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (skipIntroduction)
+		if (skipIntroduction) {
+			Global.animationEnded = true;
 			gameObject.SetActive (false);
+		}
 	}
 	
 	// Update is called once per frame

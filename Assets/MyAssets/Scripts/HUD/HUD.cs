@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour {
 
-	public GameObject forMaster;
-	public GameObject forClient;
+	public GameObject[] forMaster;
+	public GameObject[] forClient;
 
 	public GameObject[] steps;
 	public GameObject clientOnlyColliders;
@@ -38,8 +38,13 @@ public class HUD : MonoBehaviour {
 		bool isClient = !PhotonNetwork.isMasterClient && isInRoom;
 		bool isMaster = PhotonNetwork.isMasterClient && isInRoom || !_network.useNetwork;
 
-		forMaster.SetActive (isMaster);
-		forClient.SetActive (isClient);
+		foreach(GameObject g in forMaster)
+			g.SetActive (isMaster);
+		foreach(GameObject g in forClient)
+			g.SetActive (isClient);
+
+		//forMaster.SetActive (isMaster);
+		//forClient.SetActive (isClient);
 		clientOnlyColliders.SetActive (isClient);
 
 		text.text = "Status: " + PhotonNetwork.connectionStateDetailed.ToString () + ((PhotonNetwork.isMasterClient)?" (Master)":" (Client)");
@@ -73,5 +78,13 @@ public class HUD : MonoBehaviour {
 		currentStep--;
 		if (currentStep < 0)
 			currentStep = 0;
+	}
+
+	public void OnPhone(){
+
+		GameObject server = GameObject.Find ("Server(Clone)");
+
+		if (server != null)
+			server.GetComponent<Server>().Press ();
 	}
 }
