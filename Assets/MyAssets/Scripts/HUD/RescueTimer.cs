@@ -93,6 +93,7 @@ public class RescueTimer : MonoBehaviour
 			(mil < 10 ? "0" + mil.ToString() : mil.ToString());
 
 		Global.timeLeft = release;
+		Global.rescueCalled = true;
 	}
 
 	/// <summary>

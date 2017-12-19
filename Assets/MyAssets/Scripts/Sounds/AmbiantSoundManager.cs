@@ -9,6 +9,7 @@ public class AmbiantSoundManager : MonoBehaviour {
 
 	public FMODUnity.StudioEventEmitter looseMusic;
 	public FMODUnity.StudioEventEmitter phoneRing;
+	public FMODUnity.StudioEventEmitter introMusic;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +29,12 @@ public class AmbiantSoundManager : MonoBehaviour {
 			intensity = 1f - ((transform.position - terrorist.transform.position).magnitude / 20f);
 		}
 
+		//if (terrorist != null)
+		//	introMusic.Stop ();
+
+		if (Global.GameOver)
+			intensity = 0;
+
 		ambiant.SetParameter ("Intensity", intensity);
 		ambiant.SetParameter ("Timer", 1f - Global.timeLeft / Global.duration);
 
@@ -41,5 +48,8 @@ public class AmbiantSoundManager : MonoBehaviour {
 		if (!Global.phoneRing && phoneRing.IsPlaying()) {
 			phoneRing.Stop ();
 		}
+
+		if (Global.timeLeft <= 0 && Global.rescueCalled)
+			Global.victory = true;
 	}
 }

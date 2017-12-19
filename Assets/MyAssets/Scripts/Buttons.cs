@@ -34,10 +34,10 @@ public class Buttons : MonoBehaviour {
 			prev_state = isEnable;
 		}
 
-		if (activable.isClosing () && !soundOff.IsPlaying() ) {
+		if (activable.isClosing () && soundOff!=null && !soundOff.IsPlaying() ) {
 			soundOff.Play ();
 		}
-		if (activable.isOpening () && !soundOn.IsPlaying() ) {
+		if (activable.isOpening () && soundOn!=null  && !soundOn.IsPlaying() ) {
 			soundOn.Play ();
 		}
 	}

@@ -23,9 +23,10 @@ MonoBehaviour:
   - {fileID: 114573769381489642}
   - {fileID: 114451120438593124}
   - {fileID: 114766433634597820}
+  - {fileID: 114548547549193948}
   MasterBankRef: {fileID: 114777567103256466}
   StringsBankRef: {fileID: 114183525983286434}
-  stringsBankWriteTime: 636492115023323712
+  stringsBankWriteTime: 636493016238623804
   cacheVersion: 2
 --- !u!114 &114004685458660912
 MonoBehaviour:
@@ -62,6 +63,21 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
+--- !u!114 &114025240209192508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Value
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114052786711614658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +277,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114165305557131630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Timer
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114183525983286434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,12 +304,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMODProject\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636492115023323712
+  lastModified: 636493016238623804
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1080
+    Value: 1128
   Exists: 1
+--- !u!114 &114188376646522548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Timer
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114190565370629440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +343,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 659200
   Exists: 1
+--- !u!114 &114190746257578302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Timer
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114195217398218124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,6 +702,21 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+--- !u!114 &114483918064513708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114493348935625664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,6 +774,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114548547549193948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music_ambiance/MusicIntro
+  guid: 563bf046baca8948ba564b2d0f95ef91
+  Banks:
+  - {fileID: 114777567103256466}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 114639072107110378}
+  - {fileID: 114025240209192508}
+  MinDistance: 1
+  MaxDistance: 20
+--- !u!114 &114562765881678494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Value
   Min: 0
   Max: 1
   Default: 0
@@ -782,6 +896,21 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+--- !u!114 &114585761617430676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Value
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114593865524151240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -823,8 +952,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114721457642564626}
-  - {fileID: 114695923723656038}
+  - {fileID: 114188376646522548}
+  - {fileID: 114678859857422484}
   MinDistance: 1
   MaxDistance: 20
 --- !u!114 &114636616362289258
@@ -839,6 +968,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "Intensit\xE9"
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114639072107110378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
   Min: 0
   Max: 1
   Default: 0
@@ -902,6 +1046,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114668538716075452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114672698007664508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -932,6 +1091,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114676557087504178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114676992718193224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -944,6 +1118,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Timer
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114678859857422484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
   Min: 0
   Max: 1
   Default: 0
@@ -1109,11 +1298,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: D:\Documents\Programmation\Unity\TerroristEscape\Assets\FMODProject\Build\Desktop\Master
     Bank.bank
-  lastModified: 636492115023278679
+  lastModified: 636493016238603601
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1636704
+    Value: 2771776
   Exists: 1
 --- !u!114 &114790348424130324
 MonoBehaviour:
@@ -1293,6 +1482,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 810
   Exists: 1
+--- !u!114 &114948606978730022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114965589502401362
 MonoBehaviour:
   m_ObjectHideFlags: 0

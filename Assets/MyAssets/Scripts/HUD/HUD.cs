@@ -19,6 +19,9 @@ public class HUD : MonoBehaviour {
 
 	private bool cursor = false;
 
+	public GameObject prefabVictory;
+	private GameObject victory = null;
+
 	// Use this for initialization
 	void Start () {
 		_network = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
@@ -32,6 +35,10 @@ public class HUD : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (Global.victory && victory == null && prefabVictory!=null)
+			victory = Instantiate (prefabVictory, Global.canvas.transform);
+
 		cursor = !Global.hideCursor;
 
 		bool isInRoom = PhotonNetwork.inRoom && _network.useNetwork;

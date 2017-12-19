@@ -39,7 +39,7 @@ public class MoveFPS : MonoBehaviour {
 			GetComponent<Rigidbody> ().velocity =  Vector3.zero;
 		}
 
-		if (Global.GameOver)
+		if (Global.GameOver || Global.victory)
 			return;
 
 		if (_view.isMine || !_network.useNetwork) {

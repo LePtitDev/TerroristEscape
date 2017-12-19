@@ -21,6 +21,8 @@ public class Global : MonoBehaviour {
 	public static GameObject canvas;
 	public static GameObject prefabScreenGameOver;
 	public static bool GameOver = false;
+	public static bool victory = false;
+	public static bool rescueCalled = false;
 
 	public static float timeLeft;
 	public static float duration;
