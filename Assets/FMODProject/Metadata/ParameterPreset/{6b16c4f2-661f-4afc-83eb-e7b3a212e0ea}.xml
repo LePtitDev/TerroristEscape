@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{6b16c4f2-661f-4afc-83eb-e7b3a212e0ea}">
+        <property name="name">
+            <value>Rythme</value>
+        </property>
+        <relationship name="folder">
+            <destination>{b31dec49-b471-4777-aa23-08d086dbd073}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{588ffc2e-9f63-440b-b263-c22197e999f4}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{588ffc2e-9f63-440b-b263-c22197e999f4}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>

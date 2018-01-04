@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{8cbf0fb8-1855-4897-adde-8d6eb506fdec}">
+        <property name="assetPath">
+            <value>horror suspense drone background SoundEffectsFactory.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>65.730476190476196</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{c45efa2a-8150-45b3-88ae-1c2975c422f1}</destination>
+        </relationship>
+    </object>
+</objects>

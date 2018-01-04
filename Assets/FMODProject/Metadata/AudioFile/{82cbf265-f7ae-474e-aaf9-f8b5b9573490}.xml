@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{82cbf265-f7ae-474e-aaf9-f8b5b9573490}">
+        <property name="assetPath">
+            <value>Pistol Sound Effect.mp3</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>4.3885714285714288</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{c45efa2a-8150-45b3-88ae-1c2975c422f1}</destination>
+        </relationship>
+    </object>
+</objects>
