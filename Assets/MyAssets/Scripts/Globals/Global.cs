@@ -17,9 +17,11 @@ public class Global : MonoBehaviour {
 
 	public GameObject _canvas;
 	public GameObject _prefabScreenGameOver;
+	public GameObject _prefabScreenVictory;
 
 	public static GameObject canvas;
 	public static GameObject prefabScreenGameOver;
+	public static GameObject prefabScreenVictory;
 	public static bool GameOver = false;
 	public static bool victory = false;
 	public static bool rescueCalled = false;
@@ -40,6 +42,7 @@ public class Global : MonoBehaviour {
 
 		canvas = _canvas;
 		prefabScreenGameOver = _prefabScreenGameOver;
+		prefabScreenVictory = _prefabScreenVictory;
 
 		//UnityEditor.PlayerSettings.MTRendering = false;
 

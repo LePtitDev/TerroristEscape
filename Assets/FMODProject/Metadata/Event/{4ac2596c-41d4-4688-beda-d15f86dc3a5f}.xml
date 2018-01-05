@@ -35,6 +35,9 @@
             <destination>{445ccaff-c82c-4e1b-940e-698cafe65ad8}</destination>
             <destination>{9639b035-0aed-4a6a-92d8-f3aff6454cdb}</destination>
         </relationship>
+        <relationship name="banks">
+            <destination>{93dfe1ac-0fbd-4218-8b5c-f3b1886814dc}</destination>
+        </relationship>
     </object>
     <object class="EventMixer" id="{dbdfef3d-0729-44bf-96fc-f98065bf123e}">
         <relationship name="masterBus">
@@ -361,7 +364,7 @@
     </object>
     <object class="AutomationPoint" id="{753b9b04-c564-4193-b019-e497bad15e65}">
         <property name="position">
-            <value>0.99997916666666664</value>
+            <value>0.95239918307355753</value>
         </property>
         <property name="value">
             <value>0</value>
@@ -369,7 +372,7 @@
     </object>
     <object class="AutomationPoint" id="{437089eb-368b-4912-abc9-1a6570a01baf}">
         <property name="position">
-            <value>1</value>
+            <value>0.95242001640689089</value>
         </property>
         <property name="value">
             <value>-80</value>

@@ -63,7 +63,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4071849855258806
 Transform:
@@ -72,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1426816105128524}
   m_LocalRotation: {x: -0, y: 0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 10.570105, y: -0.06, z: -0.39}
+  m_LocalPosition: {x: 0, y: 0, z: -0.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4799324625845618}
@@ -226,6 +226,7 @@ MonoBehaviour:
   debug: 0
   soundEmitter: {fileID: 114624171735340660}
   soundWhenOpened: 1
+  playAllsound: 0
 --- !u!114 &114624171735340660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -237,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: event:/Son_environnement/Robinet
+  Event: event:/SFX/Environnement/Robinet
   PlayEvent: 0
   StopEvent: 2
   CollisionTag: 

@@ -80,6 +80,11 @@ public class RescueTimer : MonoBehaviour
 		if (_begin + Duration <= Time.time)
 		{
 			_textTimer.text = "00:00:00";
+
+			if (Global.timeLeft <= 0 && !Global.GameOver && !Global.victory) {
+				Instantiate (Global.prefabScreenVictory, Global.canvas.transform);
+				Global.victory = true;
+			}
 			if (OnRescue != null)
 				OnRescue.Invoke();
 			return;

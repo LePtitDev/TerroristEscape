@@ -94,6 +94,8 @@ public class TerroristSpotter : PNJ_Controller {
 		if (Player != null) {
 			base.Update ();
 		}
+
+
     }
 
     // Indicate if ignore collider
@@ -173,7 +175,7 @@ public class TerroristSpotter : PNJ_Controller {
                                 OnSpotted.Invoke(gameObject);
                             //Debug.Log("Spotted!");
 
-							if (!Global.GameOver) {
+							if (!Global.GameOver && !Global.victory) {
 								Instantiate (Global.prefabScreenGameOver, Global.canvas.transform);
 								Global.GameOver = true;
 							}

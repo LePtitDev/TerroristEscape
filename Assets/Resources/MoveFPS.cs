@@ -8,6 +8,8 @@ public class MoveFPS : MonoBehaviour {
 	public float horizontalMouseSpeed = 2.0f;
 	public float vertiaclMouseSpeed = 2.0f;
 
+	public FMODUnity.StudioEventEmitter Footstep;
+
 	public GameObject cameraPosition;
 	public GameObject cameraTarget;
 
@@ -70,6 +72,8 @@ public class MoveFPS : MonoBehaviour {
 
 			_camera.transform.position = cameraPosition.transform.position;
 			_camera.transform.LookAt (cameraTarget.transform.position);
+
+			Footstep.SetParameter("VolumeFootStep", (Mathf.Abs(move_h)+Mathf.Abs(move_v) > 0.1) ? 0.5f : 1f );
 		}
 	}
 }

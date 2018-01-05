@@ -14,7 +14,7 @@
 [LOG] SystemI::init                            : create the stream thread
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000000519820B8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000000066B00AB8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -22,77 +22,13 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000006423A758
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000006423A758
 [LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
-[LOG] SystemI::createSound                     : filename = Assets\FMODProject\Build\Desktop/Master Bank.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000000006423B9E8 : node = 000000006542ED80
-[LOG] SystemI::createSound                     : add node to async list : head = 0000000064C829B8.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000006423B9E8
-[LOG] SystemI::createSoundInternal             :     filename = Assets\FMODProject\Build\Desktop/Master Bank.bank : mode 02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2742304
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 29472
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000006542EE98
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 400
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
-[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
-[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
-[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 596288
-[LOG] SystemI::createSample                    :     channels = 2
-[LOG] SystemI::createSample                    :     output = 000000005D77F088
-[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 596288, channels 2, format 2, freq 48000, mode 0201008a
-[LOG] System::createSoundInternal              :     1 subsounds detected.
-[LOG] System::createSoundInternal              :     Seek stream to start
-[LOG] System::createSoundInternal              :     flush stream buffer
-[LOG] System::createSoundInternal              :     flush successful.
-[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
-[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
-
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000006423B9E8
-[LOG] SoundI::getSubSound                      : sound 000000006423B9E8.  Subsound index 0 / 1
-[LOG] SoundI::release                          : heartbeat-fast_Mycvl3Nu (000000006423A5A8)
-[LOG] SoundI::release                          : remove stream samples. (000000006423A5A8)
-[LOG] SoundI::release                          :     heartbeat-fast_Mycvl3Nu (0000000064C81B68)
-[LOG] SoundI::release                          :     done
-[LOG] SoundI::release                          : release subsounds. (000000006423A5A8)
-[LOG] SoundI::release                          :     heartbeat-fast_Mycvl3Nu (000000006423B4D8)
-[LOG] SoundI::release                          :     done
-[LOG] SoundI::release                          : release codec. (000000006423A5A8)
-[LOG] SoundI::release                          : done
 [LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
-[LOG] SoundI::release                          : heartbeat-fast_Mycvl3Nu (000000006423B9E8)
-[LOG] SoundI::release                          : remove stream samples. (000000006423B9E8)
-[LOG] SoundI::release                          :     heartbeat-fast_Mycvl3Nu (0000000064C81688)
-[LOG] SoundI::release                          :     done
-[LOG] SoundI::release                          : release subsounds. (000000006423B9E8)
-[LOG] SoundI::release                          :     heartbeat-fast_Mycvl3Nu (000000006423B178)
-[LOG] SoundI::release                          :     done
-[LOG] SoundI::release                          : release codec. (000000006423B9E8)
-[LOG] SoundI::release                          : done
-[LOG] SoundI::release                          : Slow Beat1 (000000006423AC68)
-[LOG] SoundI::release                          : remove stream samples. (000000006423AC68)
-[LOG] SoundI::release                          :     Slow Beat1 (0000000064C814E8)
-[LOG] SoundI::release                          :     done
-[LOG] SoundI::release                          : release subsounds. (000000006423AC68)
-[LOG] SoundI::release                          :     Slow Beat1 (000000006423A758)
-[LOG] SoundI::release                          :     done
-[LOG] SoundI::release                          : release codec. (000000006423AC68)
-[LOG] SoundI::release                          : done
-[LOG] SoundI::release                          :  (0000000064D10DF8)
-[LOG] SoundI::release                          : release subsounds. (0000000064D10DF8)
-[LOG] SoundI::release                          :     helicopter (0000000064C819C8)
-[LOG] SoundI::release                          :     done
-[LOG] SoundI::release                          : release codec. (0000000064D10DF8)
-[LOG] SoundI::release                          : done
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
@@ -101,7 +37,6 @@
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] SystemI::close                           : Stream thread destroyed
 [LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] SystemI::close                           : Free master channel group.
 [LOG] SystemI::close                           : Remove 'master' sound group.
 [LOG] SystemI::close                           : Free software output.
@@ -109,10 +44,3 @@
 [LOG] SystemI::close                           : Free channel pool.
 [LOG] SystemI::close                           : done.
 
-[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
-[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
-[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
-[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
-[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
-[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6

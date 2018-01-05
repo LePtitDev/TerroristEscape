@@ -27,6 +27,9 @@ public class Doors : MonoBehaviour {
 	private float durationPoignee = 1.0f;
 	private float anglePoignee = 0.0f;
 
+	public FMODUnity.StudioEventEmitter SoundOpen;
+	public FMODUnity.StudioEventEmitter SoundClose;
+
 	private GameObject character;
 
 	// Use this for initialization
@@ -42,6 +45,9 @@ public class Doors : MonoBehaviour {
 		}
 
 		if (needClose) {
+			if (!SoundClose.IsPlaying ())
+				SoundClose.Play ();
+			
 			if (left_true_right_false) { // door on left size (positive angle)
 				angle -= angular_speed * Time.deltaTime;
 				if (angle < 0) {
@@ -60,6 +66,9 @@ public class Doors : MonoBehaviour {
 		}
 
 		if (needOpen) {
+			if (!SoundOpen.IsPlaying ())
+				SoundOpen.Play ();
+
 			if (left_true_right_false) { // door on left size (positive angle)
 				angle += angular_speed * Time.deltaTime;
 				if (angle >= angle_max_left) {

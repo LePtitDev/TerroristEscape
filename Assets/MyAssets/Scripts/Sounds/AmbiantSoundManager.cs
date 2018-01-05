@@ -4,52 +4,52 @@ using UnityEngine;
 
 public class AmbiantSoundManager : MonoBehaviour {
 
-	public FMODUnity.StudioEventEmitter ambiant;
 	private GameObject terrorist = null;
+	private GameObject player = null;
 
-	public FMODUnity.StudioEventEmitter looseMusic;
 	public FMODUnity.StudioEventEmitter phoneRing;
-	public FMODUnity.StudioEventEmitter introMusic;
+	public FMODUnity.StudioEventEmitter MusicLoop;
+	public FMODUnity.StudioEventEmitter CopsSounds;
 
 	// Use this for initialization
 	void Start () {
-		
+		MusicLoop.Play ();
+		CopsSounds.Play ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-		if (terrorist == null) {
+		if (terrorist == null)
 			terrorist = GameObject.Find ("Terrorist(Clone)");
+		if (player == null) {
+			player = GameObject.Find ("Server_FPS(Clone)");
+			return;
 		}
 
-		float intensity = 0.0f;
+		// Parameters: InGame / Death / Intensity / Victory
 
-		if( terrorist != null ){
-			intensity = 1f - ((transform.position - terrorist.transform.position).magnitude / 20f);
-		}
+		float param_InGame = player.GetComponent<MoveFPS> ().enabled ? 1f : 0f;
+		float param_Death = Global.GameOver ? 1f : 0f;
+		float param_Intensity = 0f;
+		if( terrorist != null )
+			param_Intensity = 1f - ((transform.position - terrorist.transform.position).magnitude / 20f);
+		float param_Victory = (Global.victory) ? 1f : 0f;
 
-		//if (terrorist != null)
-		//	introMusic.Stop ();
+		MusicLoop.SetParameter ("InGame", param_InGame);
+		MusicLoop.SetParameter ("Death", param_Death);
+		MusicLoop.SetParameter ("Intensity", param_Intensity);
+		MusicLoop.SetParameter ("Victory", param_Victory);
 
-		if (Global.GameOver)
-			intensity = 0;
+		float param_Timer = 1f - Global.timeLeft / Global.duration;
+		if (Global.GameOver || Global.victory)
+			param_Timer = 0f;
 
-		ambiant.SetParameter ("Intensity", intensity);
-		ambiant.SetParameter ("Timer", 1f - Global.timeLeft / Global.duration);
+		CopsSounds.SetParameter ("Timer", param_Timer);
 
-		if (Global.GameOver && !looseMusic.IsPlaying()) {
-			looseMusic.Play ();
-		}
-
-		if (Global.phoneRing && !phoneRing.IsPlaying()) {
+		if (Global.phoneRing && !phoneRing.IsPlaying()) 
 			phoneRing.Play ();
-		}
-		if (!Global.phoneRing && phoneRing.IsPlaying()) {
+		if (!Global.phoneRing && phoneRing.IsPlaying()) 
 			phoneRing.Stop ();
-		}
-
-		if (Global.timeLeft <= 0 && Global.rescueCalled)
-			Global.victory = true;
+		
 	}
 }
