@@ -292,7 +292,9 @@ MonoBehaviour:
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  Params: []
+  Params:
+  - Name: VolumeFootStep
+    Value: 0
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
@@ -310,7 +312,7 @@ MonoBehaviour:
   RaycastStart: {fileID: 1611660712066818}
   ViewAngle: 45
   Player: {fileID: 0}
-  m_StepDistance: 2
+  m_StepDistance: 1.8
   Footstep: {fileID: 114062102861403590}
 --- !u!114 &114350759079395958
 MonoBehaviour:

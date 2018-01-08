@@ -23,7 +23,7 @@ public class FootStepListener : MonoBehaviour {
 			hits = Physics.RaycastAll(transform.position, terrorist.transform.position, distanceMax);
 			for (int i = 0; i < hits.Length; i++)
 			{
-				Debug.Log (this.name +" " + i + " " +" hit: "+ hits[i].collider.gameObject );
+				//Debug.Log (this.name +" " + i + " " +" hit: "+ hits[i].collider.gameObject );
 			}
 			distance = (transform.position - terrorist.transform.position).magnitude / distanceMax;
 		} else {

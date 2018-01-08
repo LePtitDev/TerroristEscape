@@ -22,7 +22,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 342}
   m_MaxSize: {x: 12008, y: 8042}
   vertical: 1
-  controlID: 18327
+  controlID: 24907
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 342}
   m_MaxSize: {x: 12008, y: 8042}
   vertical: 0
-  controlID: 18328
+  controlID: 24908
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 342}
   m_MaxSize: {x: 8006, y: 8042}
   vertical: 1
-  controlID: 18329
+  controlID: 24909
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 18330
+  controlID: 24910
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,10 +223,10 @@ MonoBehaviour:
     width: 401
     height: 639
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 74c8ffff
-    m_LastClickedID: -14220
-    m_ExpandedIDs: 0c4ffeff86e9ffff60ecffff00000000345100003e53000078530000825300007e570000
+    scrollPos: {x: 0, y: 642}
+    m_SelectedIDs: da3c0000
+    m_LastClickedID: 0
+    m_ExpandedIDs: 0c4ffeff86e9ffff60ecffff00000000345100003e530000465300007853000082530000ec5500007e570000b0570000d6570000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -324,21 +324,21 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
     yGrid:
-      m_Target: 0
+      m_Target: 1
       speed: 2
-      m_Value: 0
+      m_Value: 1
     zGrid:
       m_Target: 0
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.017886473, y: -0.9106509, z: 0.039639745, w: 0.41094664}
+    m_Target: {x: 0.13642702, y: -0.83716124, z: 0.24255015, w: 0.47092628}
     speed: 2
-    m_Value: {x: -0.017885998, y: 0.9106266, z: -0.039638683, w: -0.41093567}
+    m_Value: {x: -0.13642338, y: 0.8371389, z: -0.24254367, w: -0.4709137}
   m_Size:
-    m_Target: 13.745176
+    m_Target: 7.554299
     speed: 2
-    m_Value: 13.745176
+    m_Value: 7.554299
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -415,18 +415,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/MyAssets/Scripts/Sounds
+    - Assets/MyAssets/Scripts/Characters
   m_ViewMode: 1
   m_StartGridSize: 60
   m_LastFolders:
-  - Assets/MyAssets/Scripts/Sounds
+  - Assets/MyAssets/Scripts/Characters
   m_LastFoldersGridSize: 60
   m_LastProjectPath: C:\Users\Anthony\Desktop\Master\Jeux Serieux\TerroristEscape
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 375}
-    m_SelectedIDs: 84430000
-    m_LastClickedID: 17284
+    scrollPos: {x: 0, y: 463}
+    m_SelectedIDs: 3c480000
+    m_LastClickedID: 18492
     m_ExpandedIDs: 000000008c0900007a430000be440000244600006e4600007446000070480000384900004c490000444a0000524d0000924f00004c50000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -480,9 +480,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 74c8ffff
-    m_LastClickedInstanceID: -14220
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: da3c0000
+    m_LastClickedInstanceID: 15578
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c8340000e6460000502e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -616,7 +616,7 @@ MonoBehaviour:
     y: 100
     width: 546
     height: 910
-  m_ScrollPosition: {x: 0, y: 0}
+  m_ScrollPosition: {x: 0, y: 944.6406}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: -160
