@@ -58,6 +58,13 @@ public class TerroristSpotter : PNJ_Controller {
 	/// </summary>
 	private NetworkManager _network;
 
+	private float m_DistanceTravelled = 0f;
+	public float m_StepDistance = 1f;
+	private float m_StepRand = 0f;
+	private Vector3 m_PrevPos;
+
+	public FMODUnity.StudioEventEmitter Footstep;
+
     protected override void Start() {
         base.Start();
         /*if (GameObject.Find("NetworkManager").GetComponent<NetworkManager>().useNetwork)
@@ -75,10 +82,21 @@ public class TerroristSpotter : PNJ_Controller {
         target_hidding = null;
 
 		_network = GameObject.Find ("NetworkManager").GetComponent<NetworkManager> ();
+
+		m_PrevPos = transform.position;
     }
 
     // Update is called once per frame
     protected override void Update () {
+
+		if (Global.victory || Global.GameOver) {
+			FMODUnity.StudioEventEmitter[] emitters = gameObject.GetComponents<FMODUnity.StudioEventEmitter> ();
+			foreach (FMODUnity.StudioEventEmitter e in emitters)
+				if(e.IsPlaying())
+					e.Stop ();
+		}
+
+		FootStepSounds();
 
 		if (Player == null)
 			Player = GameObject.Find ("TerroristTarget");
@@ -286,6 +304,18 @@ public class TerroristSpotter : PNJ_Controller {
     public bool HasNotTarget()
     {
         return _target == null;
-    }
+	}
+
+	void FootStepSounds(){
+		m_DistanceTravelled += (transform.position - m_PrevPos).magnitude;
+		if (m_DistanceTravelled >= m_StepDistance + m_StepRand) {
+			Footstep.Play ();
+			m_StepRand = Random.Range (0f, 0.5f);
+			m_DistanceTravelled = 0.0f;
+
+			Debug.Log ("Play");
+		}
+		m_PrevPos = transform.position;
+	}
     
 }

@@ -21,6 +21,11 @@ public class MoveFPS : MonoBehaviour {
 	private Vector3 localPositionTarget;
 	private GameObject _camera;
 
+	private float m_DistanceTravelled = 0f;
+	public float m_StepDistance = 1f;
+	private float m_StepRand = 0f;
+	private Vector3 m_PrevPos;
+
 	// Use this for initialization
 	void Start () {
 		_network = GameObject.Find ("NetworkManager").GetComponent<NetworkManager> ();
@@ -31,6 +36,8 @@ public class MoveFPS : MonoBehaviour {
 		_camera = GameObject.Find ("LobbyCamera");
 
 		Global.controller = gameObject;
+
+		m_PrevPos = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -73,7 +80,20 @@ public class MoveFPS : MonoBehaviour {
 			_camera.transform.position = cameraPosition.transform.position;
 			_camera.transform.LookAt (cameraTarget.transform.position);
 
-			Footstep.SetParameter("VolumeFootStep", (Mathf.Abs(move_h)+Mathf.Abs(move_v) > 0.1) ? 0.5f : 1f );
+			//Footstep.SetParameter("VolumeFootStep", (Mathf.Abs(move_h)+Mathf.Abs(move_v) > 0.1) ? 0f : 1f );
+			FootStepSounds();
 		}
+	}
+
+	void FootStepSounds(){
+		m_DistanceTravelled += (transform.position - m_PrevPos).magnitude;
+		if (m_DistanceTravelled >= m_StepDistance + m_StepRand) {
+			Footstep.Play ();
+			m_StepRand = Random.Range (0f, 0.5f);
+			m_DistanceTravelled = 0.0f;
+
+			Debug.Log ("Play");
+		}
+		m_PrevPos = transform.position;
 	}
 }

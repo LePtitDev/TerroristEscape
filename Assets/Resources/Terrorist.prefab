@@ -92,7 +92,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1238027065565698}
   m_LocalRotation: {x: -0, y: 0.903962, z: -0, w: 0.4276128}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 12.480473, y: 4.2, z: -2.2429185}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4381452387571000}
@@ -285,17 +285,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: event:/SFX/Player/FootStep
-  PlayEvent: 1
-  StopEvent: 2
+  Event: event:/SFX/Player/FootStep_Normal
+  PlayEvent: 0
+  StopEvent: 0
   CollisionTag: 
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!114 &114309714104406974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -310,6 +310,8 @@ MonoBehaviour:
   RaycastStart: {fileID: 1611660712066818}
   ViewAngle: 45
   Player: {fileID: 0}
+  m_StepDistance: 2
+  Footstep: {fileID: 114062102861403590}
 --- !u!114 &114350759079395958
 MonoBehaviour:
   m_ObjectHideFlags: 1

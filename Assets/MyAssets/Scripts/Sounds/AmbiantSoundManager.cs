@@ -10,11 +10,13 @@ public class AmbiantSoundManager : MonoBehaviour {
 	public FMODUnity.StudioEventEmitter phoneRing;
 	public FMODUnity.StudioEventEmitter MusicLoop;
 	public FMODUnity.StudioEventEmitter CopsSounds;
+	public FMODUnity.StudioEventEmitter HeartBeats;
 
 	// Use this for initialization
 	void Start () {
 		MusicLoop.Play ();
 		CopsSounds.Play ();
+		HeartBeats.Play ();
 	}
 	
 	// Update is called once per frame
@@ -39,6 +41,9 @@ public class AmbiantSoundManager : MonoBehaviour {
 		MusicLoop.SetParameter ("Death", param_Death);
 		MusicLoop.SetParameter ("Intensity", param_Intensity);
 		MusicLoop.SetParameter ("Victory", param_Victory);
+
+		HeartBeats.SetParameter ("Intensity", param_Intensity);
+		HeartBeats.SetParameter ("Death", Mathf.Min (1f, param_Death + param_Victory));
 
 		float param_Timer = 1f - Global.timeLeft / Global.duration;
 		if (Global.GameOver || Global.victory)

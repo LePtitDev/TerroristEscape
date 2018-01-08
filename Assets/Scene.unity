@@ -18468,6 +18468,28 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &1843063580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1843063578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/SFX/Player/Heartbeat
+  PlayEvent: 0
+  StopEvent: 2
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!114 &1843063584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18494,6 +18516,7 @@ MonoBehaviour:
   phoneRing: {fileID: 1843063587}
   MusicLoop: {fileID: 1843063590}
   CopsSounds: {fileID: 1843063579}
+  HeartBeats: {fileID: 1843063580}
 --- !u!114 &1843063587
 MonoBehaviour:
   m_ObjectHideFlags: 0
