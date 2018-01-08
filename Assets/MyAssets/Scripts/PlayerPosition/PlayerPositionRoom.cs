@@ -49,8 +49,8 @@ public class PlayerPositionRoom : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (playerInRoom)
-			Debug.Log ( "Player in " + gameObject.name + " at " + transform.parent.gameObject.name + " " + getFitnessTotal());
+		/*if (playerInRoom)
+			Debug.Log ( "Player in " + gameObject.name + " at " + transform.parent.gameObject.name + " " + getFitnessTotal());*/
 
 		bool playerRunning = (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1 || Mathf.Abs(Input.GetAxis("Vertical")) > 0.1) && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.JoystickButton8));
 		fitness = ((playerInRoom) ? value_fitness_playerInRoom : 0) + ((playerRunning) ? value_fitness_playerRunning : 0);
