@@ -91,8 +91,6 @@ public class MoveFPS : MonoBehaviour {
 			Footstep.Play ();
 			m_StepRand = Random.Range (0f, 0.5f);
 			m_DistanceTravelled = 0.0f;
-
-			Debug.Log ("Play");
 		}
 		m_PrevPos = transform.position;
 	}

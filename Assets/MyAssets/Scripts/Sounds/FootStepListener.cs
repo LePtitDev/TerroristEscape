@@ -8,6 +8,8 @@ public class FootStepListener : MonoBehaviour {
 	private GameObject terrorist = null;
 	private float distance = 0;
 
+	private bool _terroristInRaycast = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -20,12 +22,16 @@ public class FootStepListener : MonoBehaviour {
 
 		if (terrorist != null) {
 			RaycastHit[] hits;
-			hits = Physics.RaycastAll(transform.position, terrorist.transform.position, distanceMax);
-			for (int i = 0; i < hits.Length; i++)
-			{
-				//Debug.Log (this.name +" " + i + " " +" hit: "+ hits[i].collider.gameObject );
-			}
+			hits = Physics.RaycastAll(transform.position, terrorist.transform.position-transform.position, distanceMax);
+			_terroristInRaycast = false;
+			if (hits.Length > 0 && hits [0].collider.gameObject.name == "Terrorist(Clone)")
+				_terroristInRaycast = true;
+
 			distance = (transform.position - terrorist.transform.position).magnitude / distanceMax;
+
+			if (_terroristInRaycast)
+				distance *= 2;
+
 		} else {
 			distance = distanceMax + 1;
 		}

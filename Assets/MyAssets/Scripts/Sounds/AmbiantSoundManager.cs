@@ -49,6 +49,8 @@ public class AmbiantSoundManager : MonoBehaviour {
 		if (Global.GameOver || Global.victory)
 			param_Timer = 0f;
 
+		if (!CopsSounds.IsPlaying ())
+			CopsSounds.Play ();
 		CopsSounds.SetParameter ("Timer", param_Timer);
 
 		if (Global.phoneRing && !phoneRing.IsPlaying()) 

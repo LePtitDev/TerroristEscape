@@ -309,16 +309,7 @@ public class TerroristSpotter : PNJ_Controller {
 	void FootStepSounds(){
 		m_DistanceTravelled += (transform.position - m_PrevPos).magnitude;
 		if (m_DistanceTravelled >= m_StepDistance + m_StepRand) {
-			RaycastHit[] hits;
 			Footstep.SetParameter ("VolumeFootStep", 0);
-			GameObject player = GameObject.Find ("TerroristTarget");
-			if (player) {
-				hits = Physics.RaycastAll (transform.position, player.transform.position, 1000.0f);
-				for (int i = 0; i < hits.Length; i++) {
-					//Footstep.SetParameter ("VolumeFootStep", 0.5f);
-					Debug.Log ("okokokok");
-				}
-			}
 			Footstep.Play ();
 			m_StepRand = Random.Range (0f, 0.5f);
 			m_DistanceTravelled = 0.0f;
